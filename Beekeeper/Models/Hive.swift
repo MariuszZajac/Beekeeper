@@ -15,6 +15,7 @@ struct Hive: Identifiable {
     let hiveSize: [Int]  //TODO: gniazdo" (nest), "korpus" (body), or "miodnia" (honey super) możliwość dodawania kolejnych poziomów.
     let hiveLastInspection: Date
     let hiveInspection: [Date] //TODO: = [hiveLastInspection] .list
+  
     
     
     

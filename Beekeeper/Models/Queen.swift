@@ -8,6 +8,7 @@
 import Foundation
 struct Queen: Identifiable{
     let id: UUID
+    
     let queenRace:QueenRace?
     let queenNumber: Int?
     let queenIsInseminated: Bool
@@ -20,7 +21,7 @@ struct Queen: Identifiable{
 enum QueenRace {
     case Buckfust
     case Krainka
-    case inna
+    case inna // fajnie by było móc dodać swoją nazwę. 
 }
 enum QueenQuality {
     case poor
