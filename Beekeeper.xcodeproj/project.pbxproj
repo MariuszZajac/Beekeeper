@@ -18,6 +18,8 @@
 		87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2582A8C9A03003680A3 /* Colony.swift */; };
 		87EDF25B2A8CA277003680A3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25A2A8CA277003680A3 /* TabBarView.swift */; };
 		87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25C2A8CA53E003680A3 /* WeatherView.swift */; };
+		87EDF25F2A8CA79E003680A3 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */; };
+		87EDF2612A8CA89C003680A3 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2602A8CA89C003680A3 /* Inspection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		87EDF2582A8C9A03003680A3 /* Colony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
 		87EDF25A2A8CA277003680A3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		87EDF25C2A8CA53E003680A3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
+		87EDF2602A8CA89C003680A3 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
 				87EDF2552A8BE69D003680A3 /* Queen.swift */,
 				87EDF2582A8C9A03003680A3 /* Colony.swift */,
+				87EDF2602A8CA89C003680A3 /* Inspection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				8723E15F2A8BBCA1004FD589 /* MainView.swift */,
 				87EDF25A2A8CA277003680A3 /* TabBarView.swift */,
 				87EDF25C2A8CA53E003680A3 /* WeatherView.swift */,
+				87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 				8723E1602A8BBCA1004FD589 /* MainView.swift in Sources */,
 				87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */,
 				87EDF25B2A8CA277003680A3 /* TabBarView.swift in Sources */,
+				87EDF2612A8CA89C003680A3 /* Inspection.swift in Sources */,
 				8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */,
+				87EDF25F2A8CA79E003680A3 /* ToDoListView.swift in Sources */,
 				87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */,
 				87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */,
 				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/) // po kliknieciu na pogodę 5 dni dla karzdej pasieki po lokalizacji pogoda
+        Text("Ładna pogoda") // po kliknieciu na pogodę 5 dni dla karzdej pasieki po lokalizacji pogoda
     }
 }
 

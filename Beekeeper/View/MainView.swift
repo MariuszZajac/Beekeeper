@@ -13,6 +13,9 @@ struct MainView: View {
             HStack{
                 WeatherView()// dla każdej pasieki osobna pogoda 
             }
+            
+            ToDoListView()
+            
             TabBarView()
         }
     }
