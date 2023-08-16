@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Helo, ")
+        VStack{
+            HStack{
+                WeatherView()// dla każdej pasieki osobna pogoda 
+            }
+            TabBarView()
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }

@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */; };
-		8723E1602A8BBCA1004FD589 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723E15F2A8BBCA1004FD589 /* ContentView.swift */; };
+		8723E1602A8BBCA1004FD589 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723E15F2A8BBCA1004FD589 /* MainView.swift */; };
 		8723E1622A8BBCA2004FD589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723E1612A8BBCA2004FD589 /* Assets.xcassets */; };
 		8723E1652A8BBCA2004FD589 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723E1642A8BBCA2004FD589 /* Preview Assets.xcassets */; };
+		87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24B2A8BE29B003680A3 /* Hive.swift */; };
+		87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24D2A8BE2B8003680A3 /* Apiary.swift */; };
+		87EDF2502A8BE3B7003680A3 /* BeekeepingFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */; };
+		87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2552A8BE69D003680A3 /* Queen.swift */; };
+		87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2582A8C9A03003680A3 /* Colony.swift */; };
+		87EDF25B2A8CA277003680A3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25A2A8CA277003680A3 /* TabBarView.swift */; };
+		87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25C2A8CA53E003680A3 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8723E15A2A8BBCA1004FD589 /* Beekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeekeeperApp.swift; sourceTree = "<group>"; };
-		8723E15F2A8BBCA1004FD589 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8723E15F2A8BBCA1004FD589 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8723E1612A8BBCA2004FD589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8723E1642A8BBCA2004FD589 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87EDF24B2A8BE29B003680A3 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
+		87EDF24D2A8BE2B8003680A3 /* Apiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiary.swift; sourceTree = "<group>"; };
+		87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeekeepingFarm.swift; sourceTree = "<group>"; };
+		87EDF2552A8BE69D003680A3 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
+		87EDF2582A8C9A03003680A3 /* Colony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
+		87EDF25A2A8CA277003680A3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		87EDF25C2A8CA53E003680A3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,8 @@
 		8723E15C2A8BBCA1004FD589 /* Beekeeper */ = {
 			isa = PBXGroup;
 			children = (
-				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
-				8723E15F2A8BBCA1004FD589 /* ContentView.swift */,
+				87EDF24A2A8BE279003680A3 /* Models */,
+				87EDF2572A8BF51B003680A3 /* View */,
 				8723E1612A8BBCA2004FD589 /* Assets.xcassets */,
 				8723E1632A8BBCA2004FD589 /* Preview Content */,
 			);
@@ -65,6 +79,29 @@
 				8723E1642A8BBCA2004FD589 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		87EDF24A2A8BE279003680A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */,
+				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
+				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
+				87EDF2552A8BE69D003680A3 /* Queen.swift */,
+				87EDF2582A8C9A03003680A3 /* Colony.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		87EDF2572A8BF51B003680A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
+				8723E15F2A8BBCA1004FD589 /* MainView.swift */,
+				87EDF25A2A8CA277003680A3 /* TabBarView.swift */,
+				87EDF25C2A8CA53E003680A3 /* WeatherView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +174,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8723E1602A8BBCA1004FD589 /* ContentView.swift in Sources */,
+				8723E1602A8BBCA1004FD589 /* MainView.swift in Sources */,
+				87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */,
+				87EDF25B2A8CA277003680A3 /* TabBarView.swift in Sources */,
 				8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */,
+				87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */,
+				87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */,
+				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,
+				87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */,
+				87EDF2502A8BE3B7003680A3 /* BeekeepingFarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +319,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
