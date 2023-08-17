@@ -24,6 +24,10 @@
 		87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2692A8CED7A003680A3 /* LocationManager.swift */; };
 		87EDF26E2A8DF21A003680A3 /* SetApiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */; };
 		87EDF2702A8DF6BA003680A3 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF26F2A8DF6BA003680A3 /* WeatherManager.swift */; };
+		87EDF2722A8E5E6B003680A3 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2712A8E5E6B003680A3 /* WeatherRow.swift */; };
+		87EDF2772A8E6C0A003680A3 /* InspectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2762A8E6C0A003680A3 /* InspectionView.swift */; };
+		87EDF2792A8E6C1C003680A3 /* HervestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2782A8E6C1C003680A3 /* HervestView.swift */; };
+		87EDF27B2A8E6C37003680A3 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF27A2A8E6C37003680A3 /* BalanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		87EDF26B2A8CF757003680A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApiaryView.swift; sourceTree = "<group>"; };
 		87EDF26F2A8DF6BA003680A3 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		87EDF2712A8E5E6B003680A3 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
+		87EDF2762A8E6C0A003680A3 /* InspectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionView.swift; sourceTree = "<group>"; };
+		87EDF2782A8E6C1C003680A3 /* HervestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HervestView.swift; sourceTree = "<group>"; };
+		87EDF27A2A8E6C37003680A3 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +116,15 @@
 		87EDF2572A8BF51B003680A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87EDF2752A8E6BF0003680A3 /* Inspection */,
+				87EDF2742A8E6BBE003680A3 /* Hervest */,
+				87EDF2732A8E6BB1003680A3 /* Balance */,
+				87EDF26C2A8DEEA6003680A3 /* Weather */,
 				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
 				8723E15F2A8BBCA1004FD589 /* MainView.swift */,
 				87EDF25A2A8CA277003680A3 /* TabBarView.swift */,
 				87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */,
 				87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */,
-				87EDF26C2A8DEEA6003680A3 /* Weather */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,8 +163,33 @@
 			isa = PBXGroup;
 			children = (
 				87EDF25C2A8CA53E003680A3 /* WeatherView.swift */,
+				87EDF2712A8E5E6B003680A3 /* WeatherRow.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		87EDF2732A8E6BB1003680A3 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF27A2A8E6C37003680A3 /* BalanceView.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		87EDF2742A8E6BBE003680A3 /* Hervest */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF2782A8E6C1C003680A3 /* HervestView.swift */,
+			);
+			path = Hervest;
+			sourceTree = "<group>";
+		};
+		87EDF2752A8E6BF0003680A3 /* Inspection */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF2762A8E6C0A003680A3 /* InspectionView.swift */,
+			);
+			path = Inspection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +262,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87EDF27B2A8E6C37003680A3 /* BalanceView.swift in Sources */,
+				87EDF2772A8E6C0A003680A3 /* InspectionView.swift in Sources */,
 				8723E1602A8BBCA1004FD589 /* MainView.swift in Sources */,
 				87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */,
 				87EDF25B2A8CA277003680A3 /* TabBarView.swift in Sources */,
+				87EDF2792A8E6C1C003680A3 /* HervestView.swift in Sources */,
+				87EDF2722A8E5E6B003680A3 /* WeatherRow.swift in Sources */,
 				87EDF2612A8CA89C003680A3 /* Inspection.swift in Sources */,
 				87EDF2652A8CC239003680A3 /* WeatherData.swift in Sources */,
 				8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */,

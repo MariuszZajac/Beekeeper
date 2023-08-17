@@ -10,17 +10,18 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         VStack{
+            
             HStack{
-                WeatherView()// dla każdej pasieki osobna pogoda 
+                WeatherView()
+                // dla każdej pasieki osobna pogoda
             }
             
             ToDoListView() //zadania do wykonania w pasiece zaplanowane
             
-            TabBarView() //
+            
         }
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
