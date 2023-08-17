@@ -116,14 +116,12 @@
 		87EDF2572A8BF51B003680A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
+				87F358812A8E7EC300C33452 /* ContentView.swift */,
+				87F358832A8E821A00C33452 /* HomeView */,
 				87EDF2752A8E6BF0003680A3 /* Inspection */,
 				87EDF2742A8E6BBE003680A3 /* Hervest */,
 				87EDF2732A8E6BB1003680A3 /* Balance */,
-				87EDF26C2A8DEEA6003680A3 /* Weather */,
-				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
-				87F358812A8E7EC300C33452 /* ContentView.swift */,
-				87EDF27E2A8E7CE2003680A3 /* HomeView.swift */,
-				87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */,
 				87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */,
 			);
 			path = View;
@@ -190,6 +188,24 @@
 				87EDF2762A8E6C0A003680A3 /* InspectionView.swift */,
 			);
 			path = Inspection;
+			sourceTree = "<group>";
+		};
+		87F358832A8E821A00C33452 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF27E2A8E7CE2003680A3 /* HomeView.swift */,
+				87F358842A8E824400C33452 /* ToDoList */,
+				87EDF26C2A8DEEA6003680A3 /* Weather */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		87F358842A8E824400C33452 /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */,
+			);
+			path = ToDoList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
