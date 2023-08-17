@@ -20,6 +20,10 @@
 		87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25C2A8CA53E003680A3 /* WeatherView.swift */; };
 		87EDF25F2A8CA79E003680A3 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */; };
 		87EDF2612A8CA89C003680A3 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2602A8CA89C003680A3 /* Inspection.swift */; };
+		87EDF2652A8CC239003680A3 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2642A8CC239003680A3 /* WeatherData.swift */; };
+		87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2692A8CED7A003680A3 /* LocationManager.swift */; };
+		87EDF26E2A8DF21A003680A3 /* SetApiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */; };
+		87EDF2702A8DF6BA003680A3 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF26F2A8DF6BA003680A3 /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,11 @@
 		87EDF25C2A8CA53E003680A3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
 		87EDF2602A8CA89C003680A3 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
+		87EDF2642A8CC239003680A3 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		87EDF2692A8CED7A003680A3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		87EDF26B2A8CF757003680A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApiaryView.swift; sourceTree = "<group>"; };
+		87EDF26F2A8DF6BA003680A3 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +78,8 @@
 		8723E15C2A8BBCA1004FD589 /* Beekeeper */ = {
 			isa = PBXGroup;
 			children = (
+				87EDF26B2A8CF757003680A3 /* Info.plist */,
+				87EDF2662A8CCF18003680A3 /* Cores */,
 				87EDF24A2A8BE279003680A3 /* Models */,
 				87EDF2572A8BF51B003680A3 /* View */,
 				8723E1612A8BBCA2004FD589 /* Assets.xcassets */,
@@ -88,12 +99,8 @@
 		87EDF24A2A8BE279003680A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */,
-				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
-				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
-				87EDF2552A8BE69D003680A3 /* Queen.swift */,
-				87EDF2582A8C9A03003680A3 /* Colony.swift */,
-				87EDF2602A8CA89C003680A3 /* Inspection.swift */,
+				87EDF2632A8CC1E8003680A3 /* Core */,
+				87EDF2622A8CC1D1003680A3 /* Weather */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,10 +111,49 @@
 				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
 				8723E15F2A8BBCA1004FD589 /* MainView.swift */,
 				87EDF25A2A8CA277003680A3 /* TabBarView.swift */,
-				87EDF25C2A8CA53E003680A3 /* WeatherView.swift */,
 				87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */,
+				87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */,
+				87EDF26C2A8DEEA6003680A3 /* Weather */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		87EDF2622A8CC1D1003680A3 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF2642A8CC239003680A3 /* WeatherData.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		87EDF2632A8CC1E8003680A3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */,
+				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
+				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
+				87EDF2552A8BE69D003680A3 /* Queen.swift */,
+				87EDF2582A8C9A03003680A3 /* Colony.swift */,
+				87EDF2602A8CA89C003680A3 /* Inspection.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		87EDF2662A8CCF18003680A3 /* Cores */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF2692A8CED7A003680A3 /* LocationManager.swift */,
+				87EDF26F2A8DF6BA003680A3 /* WeatherManager.swift */,
+			);
+			path = Cores;
+			sourceTree = "<group>";
+		};
+		87EDF26C2A8DEEA6003680A3 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF25C2A8CA53E003680A3 /* WeatherView.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,11 +230,15 @@
 				87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */,
 				87EDF25B2A8CA277003680A3 /* TabBarView.swift in Sources */,
 				87EDF2612A8CA89C003680A3 /* Inspection.swift in Sources */,
+				87EDF2652A8CC239003680A3 /* WeatherData.swift in Sources */,
 				8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */,
 				87EDF25F2A8CA79E003680A3 /* ToDoListView.swift in Sources */,
 				87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */,
+				87EDF26E2A8DF21A003680A3 /* SetApiaryView.swift in Sources */,
 				87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */,
+				87EDF2702A8DF6BA003680A3 /* WeatherManager.swift in Sources */,
 				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,
+				87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */,
 				87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */,
 				87EDF2502A8BE3B7003680A3 /* BeekeepingFarm.swift in Sources */,
 			);
@@ -247,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -301,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -322,6 +372,10 @@
 				DEVELOPMENT_TEAM = 88MJ4S84C5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Beekeeper/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Beekeper App neel your location. ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Beekeper App requires Apiary location.  ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,6 +406,10 @@
 				DEVELOPMENT_TEAM = 88MJ4S84C5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Beekeeper/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Beekeper App neel your location. ";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Beekeper App requires Apiary location.  ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

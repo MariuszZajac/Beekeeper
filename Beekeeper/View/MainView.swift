@@ -14,9 +14,9 @@ struct MainView: View {
                 WeatherView()// dla każdej pasieki osobna pogoda 
             }
             
-            ToDoListView()
+            ToDoListView() //zadania do wykonania w pasiece zaplanowane
             
-            TabBarView()
+            TabBarView() //
         }
     }
 }
