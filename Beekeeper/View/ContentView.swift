@@ -1,21 +1,21 @@
 //
-//  TabBarView.swift
+//  ContentView.swift
 //  Beekeeper
 //
-//  Created by Mariusz Zając on 16/08/2023.
+//  Created by Mariusz Zając on 17/08/2023.
 //
 
 import SwiftUI
 
-struct TabBarView: View {
+struct ContentView: View {
     var body: some View {
         TabView {
-            NavigationView {
-                MainView()
-            }
-            .tabItem {
-                Label("Home", systemImage: "house.circle.fill")
-            }
+           
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house.circle.fill")
+                }
+            
             BalanceView()
                 .tabItem {
                     Label("Balance", systemImage: "dollarsign.circle.fill")
@@ -31,11 +31,12 @@ struct TabBarView: View {
                     Label("Inspection", systemImage: "figure.walk")
                 }
         }
+        .accentColor(.black)
     }
 }
 
-struct TabBarView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView()
+        ContentView()
     }
 }
