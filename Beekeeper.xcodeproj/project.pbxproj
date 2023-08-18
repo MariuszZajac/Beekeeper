@@ -10,6 +10,8 @@
 		870C09FF2A8F4E89005622F8 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C09FE2A8F4E89005622F8 /* UserInfo.swift */; };
 		870C0A022A8F5D14005622F8 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C0A012A8F5D14005622F8 /* LocationViewModel.swift */; };
 		870C0A042A8F5EF3005622F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C0A032A8F5EF3005622F8 /* MapView.swift */; };
+		870C0A062A8F75EB005622F8 /* SetApiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C0A052A8F75EB005622F8 /* SetApiaryViewModel.swift */; };
+		870C0A082A8F90A0005622F8 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C0A072A8F90A0005622F8 /* WeatherViewModel.swift */; };
 		8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */; };
 		8723E1622A8BBCA2004FD589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723E1612A8BBCA2004FD589 /* Assets.xcassets */; };
 		8723E1652A8BBCA2004FD589 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723E1642A8BBCA2004FD589 /* Preview Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		870C09FE2A8F4E89005622F8 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		870C0A012A8F5D14005622F8 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		870C0A032A8F5EF3005622F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		870C0A052A8F75EB005622F8 /* SetApiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApiaryViewModel.swift; sourceTree = "<group>"; };
+		870C0A072A8F90A0005622F8 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		8723E15A2A8BBCA1004FD589 /* Beekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeekeeperApp.swift; sourceTree = "<group>"; };
 		8723E1612A8BBCA2004FD589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				870C0A012A8F5D14005622F8 /* LocationViewModel.swift */,
+				870C0A072A8F90A0005622F8 /* WeatherViewModel.swift */,
+				870C0A052A8F75EB005622F8 /* SetApiaryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87EDF27B2A8E6C37003680A3 /* BalanceView.swift in Sources */,
+				870C0A082A8F90A0005622F8 /* WeatherViewModel.swift in Sources */,
 				870C0A042A8F5EF3005622F8 /* MapView.swift in Sources */,
 				87EDF2772A8E6C0A003680A3 /* InspectionView.swift in Sources */,
 				87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */,
@@ -332,6 +339,7 @@
 				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,
 				87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */,
 				870C09FF2A8F4E89005622F8 /* UserInfo.swift in Sources */,
+				870C0A062A8F75EB005622F8 /* SetApiaryViewModel.swift in Sources */,
 				87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

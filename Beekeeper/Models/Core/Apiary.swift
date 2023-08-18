@@ -12,7 +12,7 @@ import MapKit
 struct Apiary: Identifiable {
     let id: UUID
     let apiaryName: String
-    let apiaryLocation: ApiaryLocation // do pogody gps dane potrzebne.
+    var apiaryLocation: ApiaryLocation // do pogody gps dane potrzebne.
     let apiaryOwner: String
     
     
@@ -22,5 +22,6 @@ struct ApiaryLocation: Identifiable {
     
     var longitude: Double
     var latitude: Double
+    var assigned: Bool = false 
 }
 

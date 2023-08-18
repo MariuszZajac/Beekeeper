@@ -7,29 +7,31 @@
 
 import SwiftUI
 import CoreLocation
+//temporary
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    let LocationManager = CLLocationManager()
-    
+    private let locationManager = CLLocationManager()
+
     @Published var location: CLLocationCoordinate2D?
-    
+    var locationReceived: ((CLLocationCoordinate2D?) -> Void)?
+
     override init() {
         super.init()
-        LocationManager.delegate = self
+        locationManager.delegate = self
     }
-    
+
     func requestLocation() {
-        LocationManager.requestLocation()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
-        
+        locationReceived?(location)
     }
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error getting location", error)
-       
+        print("Błąd podczas pobierania lokalizacji", error)
     }
-    
 }
 

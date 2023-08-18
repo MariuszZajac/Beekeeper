@@ -1,37 +1,60 @@
 import SwiftUI
 
 struct SetApiaryView: View {
-    @State private var address = ""
-    @ObservedObject var viewModel = LocationViewModel()
+    @StateObject var locationViewModel = LocationViewModel()
+    @StateObject var viewModel: SetApiaryViewModel
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: SetApiaryViewModel())
+    }
+    
     
     var body: some View {
         VStack {
-            if viewModel.selectedLocation != nil {
-                MapView(selectedLocation: $viewModel.selectedLocation)
-                    .frame(height: 300)
+            VStack {
+                TextField("Nazwa pasieki", text: $viewModel.apiaryName)
+                    .padding()
+                    .border(Color.gray, width: 1)
+                
+                TextField("Właściciel pasieki", text: $viewModel.apiaryOwner)
+                    .padding()
+                    .border(Color.gray, width: 1)
+                
+                VStack {
+                    TextField("Wprowadź adres", text: $viewModel.address)
+                        .padding()
+                        .border(Color.gray, width: 1)
+                    
+                    
+                    Button("Pobierz dane GPS") {
+                        locationViewModel.getCoordinatesFromAddress(address: viewModel.address)
+                    }
+                }
             }
-            
-            TextField("Wprowadź adres", text: $address)
-                .padding()
-                .border(Color.gray, width: 1)
-            
-            Button("Pobierz dane GPS") {
-                viewModel.getCoordinatesFromAddress(address: address)
+            if locationViewModel.selectedLocation != nil {
+                VStack  {
+                    MapView(locationViewModel: locationViewModel)
+                        .frame(height: 300)
+                }
             }
-            .accentColor(.black)
-            .background(Color.white)
-            
-            
-            if let latitude = viewModel.selectedLocation?.latitude,
-               let longitude = viewModel.selectedLocation?.longitude {
-                // TODO: text do poprawki
-                Text("Szerokość geograficzna: \(latitude)")
-                Text("Długość geograficzna: \(longitude)")
+            if let apiaryLocation = locationViewModel.selectedLocation {
+                Button("Stwórz pasiekę") {
+                    if let newApiary = viewModel.createApiary() {
+                        // Tutaj możesz coś zrobić z nowo utworzoną pasieką
+                        print("Utworzono pasiekę: \(newApiary)")
+                    }
+                }
+                .accentColor(.black)
+                .background(Color.white)
+                
             }
         }
         .padding()
     }
+    
 }
+
+
 struct SetApiaryView_Previews: PreviewProvider {
     static var previews: some View {
         SetApiaryView()

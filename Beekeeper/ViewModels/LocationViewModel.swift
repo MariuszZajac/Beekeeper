@@ -3,6 +3,7 @@ import CoreLocation
 
 class LocationViewModel: ObservableObject {
     @Published var selectedLocation: ApiaryLocation?
+    @Published var address = ""
     
     func updateLocation(latitude: Double, longitude: Double) {
         selectedLocation = ApiaryLocation(id: UUID(), longitude: longitude, latitude: latitude)
