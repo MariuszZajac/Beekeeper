@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870C09FF2A8F4E89005622F8 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C09FE2A8F4E89005622F8 /* UserInfo.swift */; };
+		870C0A022A8F5D14005622F8 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C0A012A8F5D14005622F8 /* LocationViewModel.swift */; };
+		870C0A042A8F5EF3005622F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C0A032A8F5EF3005622F8 /* MapView.swift */; };
 		8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */; };
 		8723E1622A8BBCA2004FD589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723E1612A8BBCA2004FD589 /* Assets.xcassets */; };
 		8723E1652A8BBCA2004FD589 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8723E1642A8BBCA2004FD589 /* Preview Assets.xcassets */; };
 		87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24B2A8BE29B003680A3 /* Hive.swift */; };
 		87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24D2A8BE2B8003680A3 /* Apiary.swift */; };
-		87EDF2502A8BE3B7003680A3 /* BeekeepingFarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */; };
 		87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2552A8BE69D003680A3 /* Queen.swift */; };
 		87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2582A8C9A03003680A3 /* Colony.swift */; };
 		87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF25C2A8CA53E003680A3 /* WeatherView.swift */; };
@@ -28,16 +30,21 @@
 		87EDF27B2A8E6C37003680A3 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF27A2A8E6C37003680A3 /* BalanceView.swift */; };
 		87EDF27F2A8E7CE2003680A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF27E2A8E7CE2003680A3 /* HomeView.swift */; };
 		87F358822A8E7EC300C33452 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F358812A8E7EC300C33452 /* ContentView.swift */; };
+		87F358862A8E93BD00C33452 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F358852A8E93BD00C33452 /* SettingsView.swift */; };
+		87F358882A8E93DA00C33452 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F358872A8E93DA00C33452 /* UserInfoView.swift */; };
+		87F3588A2A8E984800C33452 /* TopLevelHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F358892A8E984800C33452 /* TopLevelHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		870C09FE2A8F4E89005622F8 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		870C0A012A8F5D14005622F8 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		870C0A032A8F5EF3005622F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8723E15A2A8BBCA1004FD589 /* Beekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeekeeperApp.swift; sourceTree = "<group>"; };
 		8723E1612A8BBCA2004FD589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8723E1642A8BBCA2004FD589 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87EDF24B2A8BE29B003680A3 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
 		87EDF24D2A8BE2B8003680A3 /* Apiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiary.swift; sourceTree = "<group>"; };
-		87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeekeepingFarm.swift; sourceTree = "<group>"; };
 		87EDF2552A8BE69D003680A3 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
 		87EDF2582A8C9A03003680A3 /* Colony.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colony.swift; sourceTree = "<group>"; };
 		87EDF25C2A8CA53E003680A3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -54,6 +61,9 @@
 		87EDF27A2A8E6C37003680A3 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		87EDF27E2A8E7CE2003680A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		87F358812A8E7EC300C33452 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		87F358852A8E93BD00C33452 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		87F358872A8E93DA00C33452 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		87F358892A8E984800C33452 /* TopLevelHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLevelHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		870C0A002A8F5CEC005622F8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				870C0A012A8F5D14005622F8 /* LocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8723E1512A8BBCA1004FD589 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,7 @@
 				87EDF26B2A8CF757003680A3 /* Info.plist */,
 				87EDF2662A8CCF18003680A3 /* Cores */,
 				87EDF24A2A8BE279003680A3 /* Models */,
+				870C0A002A8F5CEC005622F8 /* ViewModels */,
 				87EDF2572A8BF51B003680A3 /* View */,
 				8723E1612A8BBCA2004FD589 /* Assets.xcassets */,
 				8723E1632A8BBCA2004FD589 /* Preview Content */,
@@ -123,6 +142,7 @@
 				87EDF2742A8E6BBE003680A3 /* Hervest */,
 				87EDF2732A8E6BB1003680A3 /* Balance */,
 				87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */,
+				870C0A032A8F5EF3005622F8 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,8 +158,8 @@
 		87EDF2632A8CC1E8003680A3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				87EDF24F2A8BE3B7003680A3 /* BeekeepingFarm.swift */,
 				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
+				870C09FE2A8F4E89005622F8 /* UserInfo.swift */,
 				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
 				87EDF2552A8BE69D003680A3 /* Queen.swift */,
 				87EDF2582A8C9A03003680A3 /* Colony.swift */,
@@ -194,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				87EDF27E2A8E7CE2003680A3 /* HomeView.swift */,
+				87F3588C2A8E98E300C33452 /* HomeViewGroup */,
 				87F358842A8E824400C33452 /* ToDoList */,
 				87EDF26C2A8DEEA6003680A3 /* Weather */,
 			);
@@ -206,6 +227,16 @@
 				87EDF25E2A8CA79E003680A3 /* ToDoListView.swift */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		87F3588C2A8E98E300C33452 /* HomeViewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				87F358892A8E984800C33452 /* TopLevelHomeView.swift */,
+				87F358852A8E93BD00C33452 /* SettingsView.swift */,
+				87F358872A8E93DA00C33452 /* UserInfoView.swift */,
+			);
+			name = HomeViewGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87EDF27B2A8E6C37003680A3 /* BalanceView.swift in Sources */,
+				870C0A042A8F5EF3005622F8 /* MapView.swift in Sources */,
 				87EDF2772A8E6C0A003680A3 /* InspectionView.swift in Sources */,
 				87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */,
 				87EDF2792A8E6C1C003680A3 /* HervestView.swift in Sources */,
@@ -290,13 +322,17 @@
 				87EDF25F2A8CA79E003680A3 /* ToDoListView.swift in Sources */,
 				87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */,
 				87EDF26E2A8DF21A003680A3 /* SetApiaryView.swift in Sources */,
+				87F3588A2A8E984800C33452 /* TopLevelHomeView.swift in Sources */,
 				87EDF27F2A8E7CE2003680A3 /* HomeView.swift in Sources */,
 				87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */,
+				87F358862A8E93BD00C33452 /* SettingsView.swift in Sources */,
+				87F358882A8E93DA00C33452 /* UserInfoView.swift in Sources */,
+				870C0A022A8F5D14005622F8 /* LocationViewModel.swift in Sources */,
 				87EDF2702A8DF6BA003680A3 /* WeatherManager.swift in Sources */,
 				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,
 				87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */,
+				870C09FF2A8F4E89005622F8 /* UserInfo.swift in Sources */,
 				87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */,
-				87EDF2502A8BE3B7003680A3 /* BeekeepingFarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

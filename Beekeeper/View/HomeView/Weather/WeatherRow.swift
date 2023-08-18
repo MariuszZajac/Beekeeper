@@ -16,20 +16,20 @@ struct WeatherRow: View {
         HStack(spacing: 20) {
             Image(systemName: logo)
                 .font(.title2)
-                .frame(width: 20, height: 20)
+                .frame(width: 5 , height: 5)
                 .padding()
                 .background(Color.gray)
                 .cornerRadius(50)
             
             VStack(alignment: .leading, spacing: 8) {
-                Text(name)
-                    .font(.caption)
                 Text("\(value)")
                     .bold()
-                    .font(.title)
+                    .font(.headline)
+                    
             }
             
         }
+       // .frame(width: 40, height: 50)
     }
 }
 

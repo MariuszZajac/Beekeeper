@@ -6,23 +6,21 @@
 //
 
 import Foundation
-
+import MapKit
 
 
 struct Apiary: Identifiable {
     let id: UUID
     let apiaryName: String
-    let apiaryLocation: ApiaryLocation // do pogody nie wiem czy gps dane nie potrzebne.
+    let apiaryLocation: ApiaryLocation // do pogody gps dane potrzebne.
     let apiaryOwner: String
+    
+    
+}
+struct ApiaryLocation: Identifiable {
+    var id: UUID
+    
+    var longitude: Double
+    var latitude: Double
+}
 
-    
-}
-struct ApiaryLocation {
-//    let longitude: String
-//    let latitude: String
-//
-//    func setApiaryLocation() {
-//
-//    }
-    
-}

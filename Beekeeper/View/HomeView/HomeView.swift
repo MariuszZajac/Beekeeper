@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
+   
     var body: some View {
         NavigationLink(destination: Text("Home View")) {
-            VStack{
-                
-                HStack{
-                    WeatherView()
-                    // dla każdej pasieki osobna pogoda
+            ScrollView{
+                VStack {
+                    VStack {
+                        TopLevelHomeView()
+                    }
+                    .frame(maxHeight: 20)
+                    ScrollView(.horizontal) {
+                        HStack{
+                            WeatherView()
+                            // dla każdej pasieki osobna pogoda
+                        }
+                    }
+                   // SetApiaryView()
+                    ToDoListView() //zadania do wykonania w pasiece zaplanowane
+                    
                 }
-                
-                ToDoListView() //zadania do wykonania w pasiece zaplanowane
-                
-                
             }
         }
     }

@@ -9,29 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+    VStack {
+        
+        
         TabView {
-           
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house.circle.fill")
-                }
-            
-            BalanceView()
-                .tabItem {
-                    Label("Balance", systemImage: "dollarsign.circle.fill")
-                }
-            
-            HervestView()
-                .tabItem {
-                    Label("Honey Hervest", systemImage: "box.truck.fill")
-                }
-            
-            InspectionView()
-                .tabItem {
-                    Label("Inspection", systemImage: "figure.walk")
-                }
+               
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house.circle.fill")
+                    }
+                
+                BalanceView()
+                    .tabItem {
+                        Label("Balance", systemImage: "dollarsign.circle.fill")
+                    }
+                
+                HervestView()
+                    .tabItem {
+                        Label("Honey Hervest", systemImage: "box.truck.fill")
+                    }
+                
+                InspectionView()
+                    .tabItem {
+                        Label("Inspection", systemImage: "figure.walk")
+                    }
+            }
+            .accentColor(.black)
+            .background(Color.white)
+        
         }
-        .accentColor(.black)
     }
 }
 

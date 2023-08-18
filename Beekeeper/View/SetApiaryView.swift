@@ -1,34 +1,37 @@
-//
-//  SetApiaryView.swift
-//  Beekeeper
-//
-//  Created by Mariusz Zając on 17/08/2023.
-//
-
 import SwiftUI
-import CoreLocationUI
 
 struct SetApiaryView: View {
-   
-    @StateObject var locationManager = LocationManager()
+    @State private var address = ""
+    @ObservedObject var viewModel = LocationViewModel()
     
     var body: some View {
         VStack {
-            VStack {
-                Text("Tutaj ustawimy podstawowe parametry dla pasieki takie jak w modelu i pobieramy lokalizację ")
+            if viewModel.selectedLocation != nil {
+                MapView(selectedLocation: $viewModel.selectedLocation)
+                    .frame(height: 300)
             }
-            .multilineTextAlignment(.center)
             
-            LocationButton(.shareCurrentLocation) {
-                locationManager.requestLocation()
+            TextField("Wprowadź adres", text: $address)
+                .padding()
+                .border(Color.gray, width: 1)
+            
+            Button("Pobierz dane GPS") {
+                viewModel.getCoordinatesFromAddress(address: address)
             }
-            .cornerRadius(30)
-            .symbolVariant(.fill)
-            .foregroundColor(.white)
+            .accentColor(.black)
+            .background(Color.white)
+            
+            
+            if let latitude = viewModel.selectedLocation?.latitude,
+               let longitude = viewModel.selectedLocation?.longitude {
+                // TODO: text do poprawki
+                Text("Szerokość geograficzna: \(latitude)")
+                Text("Długość geograficzna: \(longitude)")
+            }
         }
+        .padding()
     }
 }
-
 struct SetApiaryView_Previews: PreviewProvider {
     static var previews: some View {
         SetApiaryView()

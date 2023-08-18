@@ -18,7 +18,7 @@ struct WeatherView: View {
             if let weather = weather {
                 VStack {
                     Text("Pasieka 1 ") //apiary name here
-                        .font(.title)
+                        .font(.title2)
                         .fontWeight(.bold)
                         .padding(.bottom, 10)
                     
@@ -26,32 +26,35 @@ struct WeatherView: View {
                         Text(weather.list.first?.weather.first?.description ?? "N/A")
                         //add image correct to weather??
                         Image(systemName: "cloud.sun.fill")
-                            .font(.largeTitle)
+                            .font(.title2)
                             .padding(.bottom, 20)
                     }
-                    .padding(.bottom, 10)
+                   
                     VStack {
+                        Text("\(String(format: "%.1f", weather.list.first?.main.temp ?? 0))°C")
+                            .bold()
+                            .font(.title)
+                        
                         HStack{
-                            WeatherRow(logo: "thermometer.sun", name: "Max", value: "\(String(format: "%.1f", weather.list.first?.main.temp_max ?? 0))°C")
-                            Spacer()
-                            WeatherRow(logo: "thermometer.snowflake", name: "Min", value: "\(String(format: "%.1f", weather.list.first?.main.temp_min ?? 0))°C")
+                            Text("\(String(format: "%.1f", weather.list.first?.main.temp_max ?? 0))°C / \(String(format: "%.1f", weather.list.first?.main.temp_min ?? 0))°C")
                         }
+                        
+                        Text("\(weather.list.first?.main.pressure ?? 0) hPa")
+                        
                         HStack{
                             WeatherRow(logo: "wind", name: "Wind speed", value: "\(String(format: "%.1f", weather.list.first?.wind.speed ?? 0))m/s")
                             Spacer()
-                            WeatherRow(logo: "humidity.fill", name: "Humidity", value: "\(weather.list.first?.main.humidity ?? 0) %")
+                            WeatherRow(logo: "humidity.fill", name: "Hum", value: "\(weather.list.first?.main.humidity ?? 0) %")
                         }
                         
-                        HStack {
-                            WeatherRow(logo: "arrow.down", name: "Pressure", value: ("\(weather.list.first?.main.pressure ?? 0) hPa"))
-                            
-                        }
+                        
                     }
                 }
                 .foregroundColor(.white)
                 .padding()
                 .background(Color.blue.opacity(0.2))
                 .cornerRadius(10)
+                .frame(width: 220, height: 300)
             } else {
                 Text("Loading weather data...")
             }

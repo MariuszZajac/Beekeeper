@@ -4,5 +4,7 @@
 <dict>
 	<key>CFBundleDocumentTypes</key>
 	<array/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array/>
 </dict>
 </plist>
