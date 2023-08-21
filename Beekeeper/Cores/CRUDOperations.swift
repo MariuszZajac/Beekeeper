@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Uniwersalny protokół CRUD
+// Uniwersalny protokół CRUD do implementacji
 protocol CRUDOperations {
     associatedtype ItemType: Identifiable
     
