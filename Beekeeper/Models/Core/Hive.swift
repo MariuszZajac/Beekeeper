@@ -16,7 +16,14 @@ struct Hive: Identifiable {
     let hiveLastInspection: Date
     let hiveInspection: [Date] //TODO: = [hiveLastInspection] .list
   
-    
+    init(hiveNumber: Int, hiveProducent: HiveProducent, hiveSize: [Int], hiveLastInspection: Date = Date()) {
+            self.id = UUID()
+            self.hiveNumber = hiveNumber
+            self.hiveProducent = hiveProducent
+            self.hiveSize = hiveSize
+            self.hiveLastInspection = hiveLastInspection
+            self.hiveInspections = [hiveLastInspection]
+        }
     
     
     

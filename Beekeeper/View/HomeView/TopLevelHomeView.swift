@@ -9,30 +9,20 @@ import SwiftUI
 
 struct TopLevelHomeView: View {
     var body: some View {
-        NavigationView {
-            
-            HStack {
-                NavigationLink(destination: UserInfoView()) {
-                    Image(systemName: "person.circle")
-                        .foregroundColor(.black)
-                }
-                
-                Spacer()
-                
-                NavigationLink(destination: SettingsView()) {
-                    Image(systemName: "gearshape")
-                        .foregroundColor(.black)
-                }
+        HStack {
+            NavigationLink(destination: UserInfoView()) {
+                Image(systemName: "person.circle")
+                    .foregroundColor(.black)
             }
-            .padding()
-            .frame( maxHeight: 100)
             
+            Spacer()
+            
+            NavigationLink(destination: SettingsView()) {
+                Image(systemName: "gearshape")
+                    .foregroundColor(.black)
+            }
         }
-    }
-}
-
-struct TopLevelHomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        TopLevelHomeView()
+        .padding()
+        .frame(maxHeight: 100)
     }
 }

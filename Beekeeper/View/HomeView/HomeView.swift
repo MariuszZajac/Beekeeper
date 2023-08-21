@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-   
+    
+    @EnvironmentObject var viewModel: SetApiaryViewModel
+
     var body: some View {
-        NavigationLink(destination: Text("Home View")) {
+        
             ScrollView{
                 VStack {
                     VStack {
@@ -19,21 +21,24 @@ struct HomeView: View {
                     .frame(maxHeight: 20)
                     ScrollView(.horizontal) {
                         HStack{
-                            WeatherView(viewModel: WeatherViewModel(apiaryLocation: ApiaryLocation(id: UUID(), longitude: 55.23, latitude: 23.23)))
-                            // dla każdej pasieki osobna pogoda
+                            ForEach(viewModel.apiaries) { apiary in
+                                WeatherView(viewModel: WeatherViewModel(apiary: apiary))
+                            }
+                        }
+                        .onAppear {
+                            print(viewModel.apiaries.count)
                         }
                     }
-                   // SetApiaryView()
+                    // SetApiaryView()
                     ToDoListView() //zadania do wykonania w pasiece zaplanowane
                     
                 }
             }
         }
     }
-}
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-    }
+        HomeView().environmentObject(SetApiaryViewModel())    }
 }

@@ -7,37 +7,44 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    @StateObject private var setApiaryViewModel = SetApiaryViewModel()
+    
     var body: some View {
         
-    VStack {
-        //SetApiaryView()
-        
-        TabView {
+        NavigationView {
+            VStack {
+            //SetApiaryView()
+            
+            TabView {
 
-                HomeView()
-                    .tabItem {
-                        Label("Home", systemImage: "house.circle.fill")
-                    }
+                    HomeView()
+                        .environmentObject(setApiaryViewModel)
+                        .tabItem {
+                            Label("Home", systemImage: "house.circle.fill")
+                        }
 
-                BalanceView()
-                    .tabItem {
-                        Label("Balance", systemImage: "dollarsign.circle.fill")
-                    }
+                    BalanceView()
+                        .tabItem {
+                            Label("Balance", systemImage: "dollarsign.circle.fill")
+                        }
 
-                HervestView()
-                    .tabItem {
-                        Label("Honey Hervest", systemImage: "box.truck.fill")
-                    }
+                    HervestView()
+                        .tabItem {
+                            Label("Honey Hervest", systemImage: "box.truck.fill")
+                        }
 
-                InspectionView()
-                    .tabItem {
-                        Label("Inspection", systemImage: "figure.walk")
-                    }
+                    InspectionView()
+                        .tabItem {
+                            Label("Inspection", systemImage: "figure.walk")
+                        }
+                }
+                .accentColor(.black)
+                .background(Color.white)
+            
             }
-            .accentColor(.black)
-            .background(Color.white)
-        
         }
     }
 }

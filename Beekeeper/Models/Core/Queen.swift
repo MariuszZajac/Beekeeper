@@ -6,25 +6,44 @@
 //
 
 import Foundation
-struct Queen: Identifiable{
+
+struct Queen: Identifiable {
     let id: UUID
-    
-    let queenRace:QueenRace?
-    let queenNumber: Int?
-    let queenIsInseminated: Bool
-    let queenDateAddToHive: Date?
-    let queenQuality:QueenQuality
-    
-    
+    let race: BeeRace
+    let number: Int?
+    let isInseminated: Bool
+    let dateAddedToHive: Date?
+    let quality: QueenQuality
 }
 
-enum QueenRace {
-    case Buckfust
-    case Krainka
-    case inna // fajnie by było móc dodać swoją nazwę. 
+struct BeeRace {
+    static let Buckfast = BeeRace(name: "Buckfast")
+    static let Krainka = BeeRace(name: "Krainka")
+    static let other = BeeRace(name: "Other")
+    
+    let name: String
 }
-enum QueenQuality {
+
+enum QueenQuality: String {
     case poor
     case normal
     case excellent
+}
+
+extension BeeRace {
+    private static let userDefaultsKey = "CustomBeeRaces"
+    
+    // Zapisuje listę ras pszczół
+    static func saveRaces(_ races: [BeeRace]) {
+        let raceNames = races.map { $0.name }
+        UserDefaults.standard.set(raceNames, forKey: userDefaultsKey)
+    }
+    
+    // Odczytuje listę ras pszczół
+    static func loadRaces() -> [BeeRace] {
+        if let raceNames = UserDefaults.standard.array(forKey: userDefaultsKey) as? [String] {
+            return raceNames.map { BeeRace(name: $0) }
+        }
+        return []
+    }
 }

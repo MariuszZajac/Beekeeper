@@ -6,29 +6,38 @@
 //
 
 import Foundation
-struct Inspection: Identifiable { // powinna zawierać datę inspekcji i zadania jakie wykujemy po otwarciu ula. czasami będzie ich kilka. dobrze było by później móc z tego zrobić raport dla konkretnego ula z działaniami jakie były zrobione w trakcie sezonu.
-    
-    let id = UUID()
-    
+
+struct Inspection: Identifiable {
+    let id: UUID
     let title: String
     let lastInspection: Date
-    let inspectionPurpose: InspectionPurpose
-    let inspectionNotes: String // fajnie by było mieć pole z notatką do napisania a najlepiej do dyktowania ;-)
-    let futureTask: Task
+    let purposes: [InspectionPurpose] // Pozwala przechowywać kilka celów inspekcji
+    let inspectionNotes: String // Pole do notatek, późniejsze wykorzystanie dla dyktowania
+    let futureTasks: [Task] // Lista zadań do wykonania w przyszłości
     
-    
-    
+    init(title: String, lastInspection: Date, purposes: [InspectionPurpose], inspectionNotes: String, futureTasks: [Task]) {
+        self.id = UUID()
+        self.title = title
+        self.lastInspection = lastInspection
+        self.purposes = purposes
+        self.inspectionNotes = inspectionNotes
+        self.futureTasks = futureTasks
+    }
 }
 
 struct Task: Identifiable {
-    let id = UUID()
+    let id: UUID
     let title: String
     let isCompleted: Bool
-    let isPriority: Bool //do wykonania w 1 kolejności zadania, tzw. na wczoraj, pilne!
+    let isPriority: Bool // Zadanie do natychmiastowego wykonania
     
-    
+    init(title: String, isCompleted: Bool, isPriority: Bool) {
+        self.id = UUID()
+        self.title = title
+        self.isCompleted = isCompleted
+        self.isPriority = isPriority
+    }
 }
-
 enum InspectionPurpose { // TODO: listę konkretnych zadań.
     case HiveCheck
     case HoneyHarvest

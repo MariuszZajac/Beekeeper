@@ -9,13 +9,15 @@ import SwiftUI
 
 struct UserInfoView: View {
     var body: some View {
-        NavigationLink(destination: Text("UserInfo")) {
+        //NavigationLink(destination: Text("UserInfo")) {
+            
             VStack {
-                Text("Tu będzie widok Info o user")
+                SetApiaryView()
             }
         }
         
-    }
+        
+    //}
 }
 
 struct UserInfoView_Previews: PreviewProvider {

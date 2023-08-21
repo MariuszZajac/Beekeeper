@@ -14,11 +14,13 @@ class SetApiaryViewModel: ObservableObject {
     @Published var selectedLocation: ApiaryLocation?
     @Published var address = ""
     @Published var apiary = [Apiary]()
+    @Published var apiaries: [Apiary] = []
     
     enum ApiaryError: Error {
         case noSelectedLocation
     }
     
+
         func createApiary() throws -> Apiary {
             print("Nazwa pasieki: \(apiaryName)")
             print("Właściciel pasieki: \(apiaryOwner)")
