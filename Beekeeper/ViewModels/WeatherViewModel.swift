@@ -11,7 +11,6 @@ import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     private let weatherManager = WeatherManager()
-   // private let locationManager = LocationManager()
 
     @Published var weather: WeatherResponse?
     @Published var apiaryLocation: ApiaryLocation?

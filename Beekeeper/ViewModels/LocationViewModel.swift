@@ -9,16 +9,18 @@ class LocationViewModel: ObservableObject {
         selectedLocation = ApiaryLocation(id: UUID(), longitude: longitude, latitude: latitude)
     }
     
-    func getCoordinatesFromAddress(address: String) {
+    func getCoordinatesFromAddress(address: String, completion: @escaping (ApiaryLocation?) -> Void) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { [weak self] (placemarks, error) in
-            guard let self = self,
-                  let placemark = placemarks?.first,
-                  let location = placemark.location else {
+            guard let placemark = placemarks?.first, let location = placemark.location else {
+                completion(nil)
                 return
             }
             
-            self.updateLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let locationData = ApiaryLocation(id: UUID(), longitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
+            self?.selectedLocation = locationData
+            completion(locationData)
         }
     }
+
 }

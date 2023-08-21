@@ -1,60 +1,69 @@
 import SwiftUI
+import CoreLocation
 
 struct SetApiaryView: View {
     @StateObject var locationViewModel = LocationViewModel()
     @StateObject var viewModel: SetApiaryViewModel
-    
+  //  @StateObject var adress = ""
     init() {
         _viewModel = StateObject(wrappedValue: SetApiaryViewModel())
     }
     
-    
     var body: some View {
-        VStack {
-            VStack {
-                TextField("Nazwa pasieki", text: $viewModel.apiaryName)
-                    .padding()
-                    .border(Color.gray, width: 1)
-                
-                TextField("Właściciel pasieki", text: $viewModel.apiaryOwner)
-                    .padding()
-                    .border(Color.gray, width: 1)
-                
-                VStack {
-                    TextField("Wprowadź adres", text: $viewModel.address)
-                        .padding()
-                        .border(Color.gray, width: 1)
-                    
-                    
-                    Button("Pobierz dane GPS") {
-                        locationViewModel.getCoordinatesFromAddress(address: viewModel.address)
-                    }
-                }
-            }
+        VStack(spacing: 16) {
+            
+            // Map View
             if locationViewModel.selectedLocation != nil {
-                VStack  {
-                    MapView(locationViewModel: locationViewModel)
-                        .frame(height: 300)
-                }
+                MapView(locationViewModel: locationViewModel)
+                    .frame(height: 300)
             }
-            if let apiaryLocation = locationViewModel.selectedLocation {
-                Button("Stwórz pasiekę") {
-                    if let newApiary = viewModel.createApiary() {
-                        // Tutaj możesz coś zrobić z nowo utworzoną pasieką
-                        print("Utworzono pasiekę: \(newApiary)")
-                    }
-                }
-                .accentColor(.black)
-                .background(Color.white)
+            
+            // Apiary Name TextField
+            TextField("Nazwa pasieki", text: $viewModel.apiaryName)
+                .padding()
+                .border(Color.gray, width: 1)
+            
+            // Apiary Owner TextField
+            TextField("Właściciel pasieki", text: $viewModel.apiaryOwner)
+                .padding()
+                .border(Color.gray, width: 1)
+            
+            // Address and GPS Button
+            VStack {
+                TextField("Wprowadź adres", text: $viewModel.address)
+                    .padding()
+                    .border(Color.gray, width: 1)
                 
+                Button(action: {
+                    locationViewModel.getCoordinatesFromAddress(address: viewModel.address) { location in
+                        viewModel.selectedLocation = location
+                    }
+                }, label: {
+                    Text("Pobierz dane GPS")
+                })
+
+                
+                
+                // Create Apiary Button
+                if locationViewModel.selectedLocation != nil {
+                    Button("Stwórz pasiekę") {
+                        do {
+                            let newApiary = try viewModel.createApiary()
+                            viewModel.apiary.append(newApiary) // Dodawanie nowej pasieki do listy
+                            print("Utworzono pasiekę: \(newApiary)")
+                        } catch {
+                            print("Błąd podczas tworzenia pasieki: \(error.localizedDescription)")
+                        }
+                    }
+
+                    .accentColor(.black)
+                    .background(Color.white)
+                }
             }
+            .padding()
         }
-        .padding()
     }
-    
 }
-
-
 struct SetApiaryView_Previews: PreviewProvider {
     static var previews: some View {
         SetApiaryView()

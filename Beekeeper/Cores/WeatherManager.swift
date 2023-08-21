@@ -12,6 +12,7 @@ class WeatherManager {
     
     let apiKey = "2cf58968364dce8a18154518e855ae80"
     
+    
     func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Result<WeatherResponse, Error>) -> Void) {
         
         guard let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric") else {

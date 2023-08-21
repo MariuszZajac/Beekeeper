@@ -19,7 +19,7 @@ struct HomeView: View {
                     .frame(maxHeight: 20)
                     ScrollView(.horizontal) {
                         HStack{
-                            WeatherView()
+                            WeatherView(viewModel: WeatherViewModel(apiaryLocation: ApiaryLocation(id: UUID(), longitude: 55.23, latitude: 23.23)))
                             // dla każdej pasieki osobna pogoda
                         }
                     }

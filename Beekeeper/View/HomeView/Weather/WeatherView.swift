@@ -56,15 +56,15 @@ struct WeatherView: View {
             }
         }
         .padding()
-        .onAppear {
-            viewModel.fetchWeatherData(for: )
-        }
+        //.onAppear {
+          //  viewModel.fetchWeatherData(for:wea )
+        
     }
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView()
+        WeatherView(viewModel: WeatherViewModel(apiaryLocation: ApiaryLocation(id:  UUID(uuidString: "12134124")!, longitude: 55.23, latitude: 23.23)))
     }
 }
 
