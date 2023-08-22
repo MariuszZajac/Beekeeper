@@ -17,7 +17,7 @@ struct Apiary: Identifiable, Codable {
     
     
 }
-struct ApiaryLocation: Identifiable, Codable {
+struct ApiaryLocation: Identifiable, Codable, Hashable {
     var id: UUID
     
     var longitude: Double

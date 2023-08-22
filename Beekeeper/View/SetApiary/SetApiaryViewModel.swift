@@ -14,7 +14,7 @@ class SetApiaryViewModel: ObservableObject {
     @Published var selectedLocation: ApiaryLocation?
     @Published var address = ""
     @Published var apiary = [Apiary]()
-    @Published var apiaries: [Apiary] = []
+   // @Published var apiaries: [Apiary] = []
     
    let manager = UserDefaultsManager()
 
@@ -33,8 +33,8 @@ class SetApiaryViewModel: ObservableObject {
         print("Wybrana lokalizacja: \(selectedLocation)")
         
         let newApiary = Apiary(id: UUID(), apiaryName: apiaryName, apiaryLocation: selectedLocation, apiaryOwner: apiaryOwner)
-        apiaries.append(newApiary)
-        manager.save(apiaries, forKey: "apriaries")
+        apiary.append(newApiary)
+        manager.save(apiary, forKey: "apiary")
         return newApiary
     }
 
@@ -56,16 +56,16 @@ class SetApiaryViewModel: ObservableObject {
 
     
     
-    func loadApiariesFromUserDefaults() {
-        if let savedApiaries = UserDefaults.standard.data(forKey: "apiaries") {
-            do {
-                let decodedApiaries = try JSONDecoder().decode([Apiary].self, from: savedApiaries)
-                apiaries = decodedApiaries
-            } catch {
-                print("Błąd podczas wczytywania pasiek: \(error.localizedDescription)")
-            }
-        }
-    }
-
-    
+//    func loadApiariesFromUserDefaults() {
+//        if let savedApiaries = UserDefaults.standard.data(forKey: "apiaries") {
+//            do {
+//                let decodedApiaries = try JSONDecoder().decode([Apiary].self, from: savedApiaries)
+//                apiaries = decodedApiaries
+//            } catch {
+//                print("Błąd podczas wczytywania pasiek: \(error.localizedDescription)")
+//            }
+//        }
+//    }
+//
+//
 }

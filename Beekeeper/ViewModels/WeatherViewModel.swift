@@ -24,7 +24,7 @@ class WeatherViewModel: ObservableObject {
 
     init(apiary: Apiary) {
         self.apiary = apiary
-        fetchWeatherData(for: apiary.apiaryLocation)
+      //  fetchWeatherData(for: apiary.apiaryLocation)
     }
 
     func fetchWeatherData(for apiaryLocation: ApiaryLocation?) {

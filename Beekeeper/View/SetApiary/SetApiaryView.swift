@@ -17,6 +17,7 @@ struct SetApiaryView: View {
             if locationViewModel.selectedLocation != nil {
                 MapView(locationViewModel: locationViewModel)
                     .frame(height: 300)
+                    .id(locationViewModel.selectedLocation)
             }
             ApiaryTextFields(apiaryName: $viewModel.apiaryName, apiaryOwner: $viewModel.apiaryOwner, address: $viewModel.address)
             

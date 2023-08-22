@@ -90,7 +90,6 @@
 			children = (
 				870C0A012A8F5D14005622F8 /* LocationViewModel.swift */,
 				870C0A072A8F90A0005622F8 /* WeatherViewModel.swift */,
-				870C0A052A8F75EB005622F8 /* SetApiaryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -133,6 +132,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		87DF9B7F2A94EEB300451ACE /* SetApiary */ = {
+			isa = PBXGroup;
+			children = (
+				870C0A052A8F75EB005622F8 /* SetApiaryViewModel.swift */,
+				87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */,
+				870C0A032A8F5EF3005622F8 /* MapView.swift */,
+			);
+			path = SetApiary;
+			sourceTree = "<group>";
+		};
 		87EDF24A2A8BE279003680A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,10 +158,9 @@
 				87F358812A8E7EC300C33452 /* ContentView.swift */,
 				87F358832A8E821A00C33452 /* HomeView */,
 				87EDF2752A8E6BF0003680A3 /* Inspection */,
+				87DF9B7F2A94EEB300451ACE /* SetApiary */,
 				87EDF2742A8E6BBE003680A3 /* Hervest */,
 				87EDF2732A8E6BB1003680A3 /* Balance */,
-				87EDF26D2A8DF21A003680A3 /* SetApiaryView.swift */,
-				870C0A032A8F5EF3005622F8 /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +491,7 @@
 				INFOPLIST_FILE = Beekeeper/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Beekeper App neel your location. ";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "\"Potrzebujemy dostępu do Twojej lokalizacji, aby znaleźć najbliższe pasieki.\"";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Beekeper App requires Apiary location.  ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -517,6 +526,7 @@
 				INFOPLIST_FILE = Beekeeper/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Beekeper App neel your location. ";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "\"Potrzebujemy dostępu do Twojej lokalizacji, aby znaleźć najbliższe pasieki.\"";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Beekeper App requires Apiary location.  ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

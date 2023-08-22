@@ -22,12 +22,12 @@ struct HomeView: View {
                     ScrollView(.horizontal) {
                         HStack{
                             
-                            ForEach(viewModel.apiaries) { apiary in
+                            ForEach(viewModel.apiary) { apiary in
                                 WeatherView(viewModel: WeatherViewModel(apiary: apiary))
                             }
                         }
                         .onAppear {
-                            print(viewModel.apiaries.count) //testowe pole
+                            print(viewModel.apiary.count) //testowe pole
                         }
                     }
                     // SetApiaryView()

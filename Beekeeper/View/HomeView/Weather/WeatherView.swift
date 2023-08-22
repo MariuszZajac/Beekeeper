@@ -64,10 +64,11 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleApiary = Apiary(id: UUID(uuidString: "12134124")!,
-                                  apiaryName: "Sample Apiary",
-                                  apiaryLocation: ApiaryLocation(id: UUID(), longitude: 55.23, latitude: 23.23),
-                                  apiaryOwner: "John Doe")
+        let sampleApiary = Apiary(id: UUID(uuidString: "550e8400-e29b-41d4-a716-446655440000")!,
+                                      apiaryName: "Sample Apiary",
+                                      apiaryLocation: ApiaryLocation(id: UUID(), longitude: 55.23, latitude: 23.23),
+                                      apiaryOwner: "John Doe")
+
         return WeatherView(viewModel: WeatherViewModel(apiary: sampleApiary))
     }
 }

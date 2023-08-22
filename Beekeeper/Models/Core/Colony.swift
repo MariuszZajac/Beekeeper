@@ -38,7 +38,7 @@ struct ColonyStructure: Codable {
     var larvaePercentage: Double
     var pollenPercentage: Double
     
-    // Inicjalizator z domyślnymi wartościami
+  
     init(broodPercentage: Double = 0, honeyPercentage: Double = 0, larvaePercentage: Double = 0, pollenPercentage: Double = 0) {
         self.broodPercentage = broodPercentage
         self.honeyPercentage = honeyPercentage
@@ -69,12 +69,11 @@ extension Colony {
     private static let userDefaultsKey = "StoredColonies"
     private static let defaultsManager = UserDefaultsManager()
 
-    // Zapisuje listę kolonii
     static func saveColonies(_ colonies: [Colony]) {
         defaultsManager.save(colonies, forKey: userDefaultsKey)
     }
     
-    // Odczytuje listę kolonii
+    
     static func loadColonies() -> [Colony] {
         return defaultsManager.load([Colony].self, forKey: userDefaultsKey) ?? []
     }
