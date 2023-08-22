@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopLevelHomeView: View {
+
     var body: some View {
         HStack {
             NavigationLink(destination: UserInfoView()) {
@@ -15,7 +16,7 @@ struct TopLevelHomeView: View {
                     .foregroundColor(.black)
             }
             
-            Spacer()
+           Spacer()
             
             NavigationLink(destination: SettingsView()) {
                 Image(systemName: "gearshape")

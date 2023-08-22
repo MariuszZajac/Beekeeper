@@ -7,15 +7,17 @@
 
 import Foundation
 
-struct Inspection: Identifiable {
-    let id: UUID
-    let title: String
-    let lastInspection: Date
-    let purposes: [InspectionPurpose] // Pozwala przechowywać kilka celów inspekcji
-    let inspectionNotes: String // Pole do notatek, późniejsze wykorzystanie dla dyktowania
-    let futureTasks: [Task] // Lista zadań do wykonania w przyszłości
+struct Inspection: Identifiable, Codable {
+
+        let id: UUID
+        let title: String
+        let lastInspection: Date
+        let purposes: [inspectionPurpose]
+        let inspectionNotes: String
+        let futureTasks: [Task]
+
     
-    init(title: String, lastInspection: Date, purposes: [InspectionPurpose], inspectionNotes: String, futureTasks: [Task]) {
+    init(title: String, lastInspection: Date, purposes: [inspectionPurpose], inspectionNotes: String, futureTasks: [Task]) {
         self.id = UUID()
         self.title = title
         self.lastInspection = lastInspection
@@ -25,7 +27,7 @@ struct Inspection: Identifiable {
     }
 }
 
-struct Task: Identifiable {
+struct Task: Identifiable, Codable {
     let id: UUID
     let title: String
     let isCompleted: Bool
@@ -38,7 +40,7 @@ struct Task: Identifiable {
         self.isPriority = isPriority
     }
 }
-enum InspectionPurpose { // TODO: listę konkretnych zadań.
+enum inspectionPurpose: Codable { // TODO: listę konkretnych zadań.
     case HiveCheck
     case HoneyHarvest
     case HealthCheck

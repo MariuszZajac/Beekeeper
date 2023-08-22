@@ -16,22 +16,28 @@ class SetApiaryViewModel: ObservableObject {
     @Published var apiary = [Apiary]()
     @Published var apiaries: [Apiary] = []
     
+   let manager = UserDefaultsManager()
+
     enum ApiaryError: Error {
         case noSelectedLocation
     }
     
 
-        func createApiary() throws -> Apiary {
-            print("Nazwa pasieki: \(apiaryName)")
-            print("Właściciel pasieki: \(apiaryOwner)")
-            print("Adres: \(address)")
-            guard let selectedLocation = selectedLocation else {
-                throw ApiaryError.noSelectedLocation
-            }
-            print("Wybrana lokalizacja: \(selectedLocation)")
-            
-            return Apiary(id: UUID(), apiaryName: apiaryName, apiaryLocation: selectedLocation, apiaryOwner: apiaryOwner)
+    func createApiary() throws -> Apiary {
+        print("Nazwa pasieki: \(apiaryName)")
+        print("Właściciel pasieki: \(apiaryOwner)")
+        print("Adres: \(address)")
+        guard let selectedLocation = selectedLocation else {
+            throw ApiaryError.noSelectedLocation
         }
+        print("Wybrana lokalizacja: \(selectedLocation)")
+        
+        let newApiary = Apiary(id: UUID(), apiaryName: apiaryName, apiaryLocation: selectedLocation, apiaryOwner: apiaryOwner)
+        apiaries.append(newApiary)
+        manager.save(apiaries, forKey: "apriaries")
+        return newApiary
+    }
+
 
     
     
@@ -45,6 +51,19 @@ class SetApiaryViewModel: ObservableObject {
             }
             
             completion(location.coordinate)
+        }
+    }
+
+    
+    
+    func loadApiariesFromUserDefaults() {
+        if let savedApiaries = UserDefaults.standard.data(forKey: "apiaries") {
+            do {
+                let decodedApiaries = try JSONDecoder().decode([Apiary].self, from: savedApiaries)
+                apiaries = decodedApiaries
+            } catch {
+                print("Błąd podczas wczytywania pasiek: \(error.localizedDescription)")
+            }
         }
     }
 

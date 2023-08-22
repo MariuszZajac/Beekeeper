@@ -7,34 +7,37 @@
 
 import Foundation
 
-struct Hive: Identifiable {
+struct Hive: Identifiable, Codable {
     
     let id: UUID
     let hiveNumber: Int
     let hiveProducent: HiveProducent
-    let hiveSize: [Int]  //TODO: gniazdo" (nest), "korpus" (body), or "miodnia" (honey super) możliwość dodawania kolejnych poziomów.
-    let hiveLastInspection: Date
-    let hiveInspection: [Date] //TODO: = [hiveLastInspection] .list
-  
-//    init(hiveNumber: Int, hiveProducent: HiveProducent, hiveSize: [Int], hiveLastInspection: Date = Date()) {
-//            self.id = UUID()
-//            self.hiveNumber = hiveNumber
-//            self.hiveProducent = hiveProducent
-//            self.hiveSize = hiveSize
-//            self.hiveLastInspection = hiveLastInspection
-//          //  self.hiveInspections = [hiveLastInspection]
-//        }
+    let hiveSections: [HiveSection]
+    var hiveInspections: [Inspection]
+    var hiveLastInspection: Date? {
+           return hiveInspections.sorted(by: { $0.lastInspection > $1.lastInspection }).first?.lastInspection
+       }
     
-    
-    
+    init(hiveNumber: Int, hiveProducent: HiveProducent, hiveSections: [HiveSection], hiveLastInspection: Date = Date()) {
+        self.id = UUID()
+        self.hiveNumber = hiveNumber
+        self.hiveProducent = hiveProducent
+        self.hiveSections = hiveSections
+        self.hiveInspections = []
+    }
 }
 
-enum HiveProducent: String {
-    case Langstroth = "Langstroth"
-    case Dadant = "Dadant"
-    case Wielkopolski = "Wielkopolski"
-    case Warszawski = "Warszawski"
-    case Wielkopolski18 = "Wielkopolski 18"
-    case Ostrowskiej = "Ostrowskiej"
+enum HiveProducent: String, Codable {
+    case langstroth = "Langstroth"
+    case dadant = "Dadant"
+    case wielkopolski = "Wielkopolski"
+    case warszawski = "Warszawski"
+    case wielkopolski18 = "Wielkopolski 18"
+    case ostrowskiej = "Ostrowskiej"
+}
 
+enum HiveSection: Codable {
+    case nest
+    case body
+    case honeySuper
 }

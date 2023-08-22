@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 
-struct Apiary: Identifiable {
+struct Apiary: Identifiable, Codable {
     let id: UUID
     let apiaryName: String
     var apiaryLocation: ApiaryLocation // do pogody gps dane potrzebne.
@@ -17,7 +17,7 @@ struct Apiary: Identifiable {
     
     
 }
-struct ApiaryLocation: Identifiable {
+struct ApiaryLocation: Identifiable, Codable {
     var id: UUID
     
     var longitude: Double

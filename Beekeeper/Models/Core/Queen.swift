@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Queen: Identifiable {
+struct Queen: Identifiable, Codable {
     let id: UUID
     let race: BeeRace
     let number: Int?
@@ -16,7 +16,7 @@ struct Queen: Identifiable {
     let quality: QueenQuality
 }
 
-struct BeeRace {
+struct BeeRace: Codable {
     static let Buckfast = BeeRace(name: "Buckfast")
     static let Krainka = BeeRace(name: "Krainka")
     static let other = BeeRace(name: "Other")
@@ -24,7 +24,7 @@ struct BeeRace {
     let name: String
 }
 
-enum QueenQuality: String {
+enum QueenQuality: String, Codable {
     case poor
     case normal
     case excellent
@@ -32,18 +32,31 @@ enum QueenQuality: String {
 
 extension BeeRace {
     private static let userDefaultsKey = "CustomBeeRaces"
-    
-    // Zapisuje listę ras pszczół
+    private static let defaultsManager = UserDefaultsManager()
+
     static func saveRaces(_ races: [BeeRace]) {
         let raceNames = races.map { $0.name }
-        UserDefaults.standard.set(raceNames, forKey: userDefaultsKey)
+        defaultsManager.save(raceNames, forKey: userDefaultsKey)
     }
     
-    // Odczytuje listę ras pszczół
     static func loadRaces() -> [BeeRace] {
-        if let raceNames = UserDefaults.standard.array(forKey: userDefaultsKey) as? [String] {
+        if let raceNames: [String] = defaultsManager.load([String].self, forKey: userDefaultsKey) {
             return raceNames.map { BeeRace(name: $0) }
         }
         return []
+    }
+}
+extension Queen {
+    private static let userDefaultsKey = "StoredQueens"
+    private static let defaultsManager = UserDefaultsManager()
+
+    // Zapisuje listę królowych
+    static func saveQueens(_ queens: [Queen]) {
+        defaultsManager.save(queens, forKey: userDefaultsKey)
+    }
+    
+    // Odczytuje listę królowych
+    static func loadQueens() -> [Queen] {
+        return defaultsManager.load([Queen].self, forKey: userDefaultsKey) ?? []
     }
 }

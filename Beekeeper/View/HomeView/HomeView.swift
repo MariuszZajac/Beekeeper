@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var viewModel: SetApiaryViewModel
-
+   // load apriaries ?
     var body: some View {
         
             ScrollView{
@@ -21,12 +21,13 @@ struct HomeView: View {
                     .frame(maxHeight: 20)
                     ScrollView(.horizontal) {
                         HStack{
+                            
                             ForEach(viewModel.apiaries) { apiary in
                                 WeatherView(viewModel: WeatherViewModel(apiary: apiary))
                             }
                         }
                         .onAppear {
-                            print(viewModel.apiaries.count)
+                            print(viewModel.apiaries.count) //testowe pole
                         }
                     }
                     // SetApiaryView()
@@ -34,6 +35,7 @@ struct HomeView: View {
                     
                 }
             }
+            
         }
     }
 

@@ -7,30 +7,32 @@
 
 import Foundation
 
-struct Colony: Identifiable {
+struct Colony: Identifiable, Codable {
     var id: UUID
     let health: HealthStatus
     let condition: ColonyCondition
     var structure: ColonyStructure
     let isMature: Bool // odkład czy stary ul.
+    let queen: Queen?
+    let hive: Hive
 }
 
 
-enum HealthStatus: String {
+enum HealthStatus: String, Codable {
     case excellent
     case good
     case average
     case poor
 }
 
-enum ColonyCondition: String {
+enum ColonyCondition: String, Codable {
     case active
     case dormant
     case expanding
     case declining
 }
 
-struct ColonyStructure {
+struct ColonyStructure: Codable {
     var broodPercentage: Double
     var honeyPercentage: Double
     var larvaePercentage: Double
@@ -60,5 +62,20 @@ struct ColonyStructure {
     // Funkcja sprawdzająca, czy suma procentów nie przekracza 100%
     func isTotalValid() -> Bool {
         return broodPercentage + honeyPercentage + larvaePercentage + pollenPercentage <= 100.0
+    }
+}
+
+extension Colony {
+    private static let userDefaultsKey = "StoredColonies"
+    private static let defaultsManager = UserDefaultsManager()
+
+    // Zapisuje listę kolonii
+    static func saveColonies(_ colonies: [Colony]) {
+        defaultsManager.save(colonies, forKey: userDefaultsKey)
+    }
+    
+    // Odczytuje listę kolonii
+    static func loadColonies() -> [Colony] {
+        return defaultsManager.load([Colony].self, forKey: userDefaultsKey) ?? []
     }
 }
