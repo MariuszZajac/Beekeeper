@@ -16,7 +16,16 @@ class SetApiaryViewModel: ObservableObject {
     @Published var apiary = [Apiary]()
    // @Published var apiaries: [Apiary] = []
     
-   let manager = UserDefaultsManager()
+   //let manager = UserDefaultsManager()
+    
+    init() {
+        loadApiaries()
+    }
+
+    func loadApiaries() {
+        apiary = Apiary.loadApiaries()
+    }
+
 
     enum ApiaryError: Error {
         case noSelectedLocation
@@ -33,8 +42,9 @@ class SetApiaryViewModel: ObservableObject {
         print("Wybrana lokalizacja: \(selectedLocation)")
         
         let newApiary = Apiary(id: UUID(), apiaryName: apiaryName, apiaryLocation: selectedLocation, apiaryOwner: apiaryOwner)
-        apiary.append(newApiary)
-        manager.save(apiary, forKey: "apiary")
+           apiary.append(newApiary)
+        Apiary.saveApiaries(apiary)
+
         return newApiary
     }
 
@@ -53,19 +63,4 @@ class SetApiaryViewModel: ObservableObject {
             completion(location.coordinate)
         }
     }
-
-    
-    
-//    func loadApiariesFromUserDefaults() {
-//        if let savedApiaries = UserDefaults.standard.data(forKey: "apiaries") {
-//            do {
-//                let decodedApiaries = try JSONDecoder().decode([Apiary].self, from: savedApiaries)
-//                apiaries = decodedApiaries
-//            } catch {
-//                print("Błąd podczas wczytywania pasiek: \(error.localizedDescription)")
-//            }
-//        }
-//    }
-//
-//
 }

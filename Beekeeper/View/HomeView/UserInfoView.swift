@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct UserInfoView: View {
+    @StateObject var viewModel = SetApiaryViewModel()
+
     var body: some View {
-        //NavigationLink(destination: Text("UserInfo")) {
+        VStack {
+            ApiariesListView(viewModel: viewModel)
             
-            VStack {
-                SetApiaryView()
-            }
         }
-        
-        
-    //}
+    }
 }
 
 struct UserInfoView_Previews: PreviewProvider {

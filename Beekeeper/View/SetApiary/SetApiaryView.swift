@@ -3,15 +3,18 @@ import CoreLocation
 
 struct SetApiaryView: View {
 //@StateObject var sharedApiaryViewModel = SetApiaryViewModel()
+    @ObservedObject var viewModel: SetApiaryViewModel
     @StateObject var locationViewModel = LocationViewModel()
-    @StateObject var viewModel: SetApiaryViewModel
+    //@StateObject var viewModel: SetApiaryViewModel
     @State private var isShowingAlert = false
     @State private var alertMessage = ""
+    @Environment(\.presentationMode) var presentationMode
     
-    init() {
-        _viewModel = StateObject(wrappedValue: SetApiaryViewModel())
+    
+    init(viewModel: SetApiaryViewModel) {
+        _viewModel = ObservedObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         VStack(spacing: 16) {
             if locationViewModel.selectedLocation != nil {
@@ -41,6 +44,7 @@ struct SetApiaryView: View {
                         viewModel.apiary.append(newApiary)
                         alertMessage = "Pasieka została utworzona pomyślnie!"
                         isShowingAlert = true
+                        presentationMode.wrappedValue.dismiss()
                     } catch {
                         alertMessage = "Błąd podczas tworzenia pasieki: \(error.localizedDescription)"
                         isShowingAlert = true
@@ -61,9 +65,10 @@ struct SetApiaryView: View {
 }
 struct SetApiaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SetApiaryView()
+        SetApiaryView(viewModel: SetApiaryViewModel())
     }
 }
+
 
 struct ApiaryTextFields: View {
     @Binding var apiaryName: String

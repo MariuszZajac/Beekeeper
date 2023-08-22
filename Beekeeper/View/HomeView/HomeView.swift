@@ -23,8 +23,9 @@ struct HomeView: View {
                         HStack{
                             
                             ForEach(viewModel.apiary) { apiary in
-                                WeatherView(viewModel: WeatherViewModel(apiary: apiary))
+                                WeatherView(apiary: apiary)
                             }
+
                         }
                         .onAppear {
                             print(viewModel.apiary.count) //testowe pole
