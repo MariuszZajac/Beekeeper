@@ -19,7 +19,7 @@ struct HomeView: View {
                         TopLevelHomeView()
                     }
                     .frame(maxHeight: 20)
-                    ScrollView(.horizontal) {
+                    ScrollView {
                         HStack{
                             
                             ForEach(viewModel.apiary) { apiary in

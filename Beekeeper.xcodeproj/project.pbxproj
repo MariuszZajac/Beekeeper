@@ -93,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				870C0A012A8F5D14005622F8 /* LocationViewModel.swift */,
-				870C0A072A8F90A0005622F8 /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 		87EDF26C2A8DEEA6003680A3 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				870C0A072A8F90A0005622F8 /* WeatherViewModel.swift */,
 				87EDF2642A8CC239003680A3 /* WeatherData.swift */,
 				87EDF26F2A8DF6BA003680A3 /* WeatherManager.swift */,
 				87EDF25C2A8CA53E003680A3 /* WeatherView.swift */,
