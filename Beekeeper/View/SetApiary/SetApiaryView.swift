@@ -2,10 +2,8 @@ import SwiftUI
 import CoreLocation
 
 struct SetApiaryView: View {
-//@StateObject var sharedApiaryViewModel = SetApiaryViewModel()
     @ObservedObject var viewModel: SetApiaryViewModel
     @StateObject var locationViewModel = LocationViewModel()
-    //@StateObject var viewModel: SetApiaryViewModel
     @State private var isShowingAlert = false
     @State private var alertMessage = ""
     @Environment(\.presentationMode) var presentationMode

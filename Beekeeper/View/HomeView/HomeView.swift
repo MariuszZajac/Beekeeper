@@ -10,35 +10,32 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var viewModel: SetApiaryViewModel
-   // load apriaries ?
+    // load apriaries ?
     var body: some View {
         
-            ScrollView{
+        ScrollView{
+            VStack {
                 VStack {
-                    VStack {
-                        TopLevelHomeView()
-                    }
-                    .frame(maxHeight: 20)
-                    ScrollView {
-                        HStack{
-                            
-                            ForEach(viewModel.apiary) { apiary in
-                                WeatherView(apiary: apiary)
-                            }
-
-                        }
-                        .onAppear {
-                            print(viewModel.apiary.count) //testowe pole
-                        }
-                    }
-                    // SetApiaryView()
-                    ToDoListView() //zadania do wykonania w pasiece zaplanowane
-                    
+                    TopLevelHomeView()
                 }
+                .frame(maxHeight: 20)
+                ScrollView(.horizontal){
+                    HStack(spacing: 20){
+                        
+                        ForEach(viewModel.apiary) { apiary in
+                            WeatherView(apiary: apiary)
+                        }
+                    }
+                    .padding(.horizontal, 2)
+                }
+                
             }
+            // SetApiaryView()
+            ToDoListView() //zadania do wykonania w pasiece zaplanowane
             
         }
     }
+}
 
 
 struct HomeView_Previews: PreviewProvider {

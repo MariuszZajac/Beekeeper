@@ -50,45 +50,38 @@ struct DailyWeatherView: View {
     var apiaryName: String
     
     var body: some View {
+        
         VStack {
-            VStack {
-                HStack {
-                    if let firstWeather = weather.weather.first,
-                       let weatherIcon = WeatherIcon(rawValue: firstWeather.icon) {
-                        Text(firstWeather.description)
-                        Image(systemName: weatherIcon.systemImageName)
-                    } else {
-                        Text("N/A")
-                        Image(systemName: "cloud")
-                    }
-                }
-                
-                VStack {
-                    Text("\(String(format: "%.1f", weather.main.temp))°C")
-                        .bold()
-                        .font(.title)
-                    
-                    HStack{
-                        Text("\(String(format: "%.1f", weather.main.temp_max))°C / \(String(format: "%.1f", weather.main.temp_min))°C")
-                    }
-                    
-                    Text("\(weather.main.pressure) hPa")
-                    
-                    HStack{
-                        WeatherRow(logo: "wind", name: "Wind speed", value: "\(String(format: "%.1f", weather.wind.speed))m/s")
-                        Spacer()
-                        WeatherRow(logo: "humidity.fill", name: "Hum", value: "\(weather.main.humidity) %")
-                    }
-                    
-                    
+            HStack {
+                if let firstWeather = weather.weather.first,
+                   let weatherIcon = WeatherIcon(rawValue: firstWeather.icon) {
+                    Text(firstWeather.description)
+                    Image(systemName: weatherIcon.systemImageName)
+                } else {
+                    Text("N/A")
+                    Image(systemName: "cloud")
                 }
             }
-            .foregroundColor(.white)
-            .padding()
-            .background(Color.blue.opacity(0.4))
-            .cornerRadius(10)
-            .frame(width: 220, height: 300)
+            VStack {
+                Text("\(String(format: "%.1f", weather.main.temp))°C")
+                    .bold()
+                    .font(.title)
+                HStack{
+                    Text("\(String(format: "%.1f", weather.main.temp_max))°C / \(String(format: "%.1f", weather.main.temp_min))°C")
+                }
+                Text("\(weather.main.pressure) hPa")
+                HStack{
+                    WeatherRow(logo: "wind", name: "Wind speed", value: "\(String(format: "%.1f", weather.wind.speed))m/s")
+                    //Spacer()
+                    WeatherRow(logo: "humidity.fill", name: "Hum", value: "\(weather.main.humidity) %")
+                }
+            }
         }
+        .foregroundColor(.white)
+        .padding()
+        .background(Color.blue.opacity(0.4))
+        .cornerRadius(10)
+        .frame(width: 250, height: 250)
     }
 }
 
@@ -103,7 +96,7 @@ struct WeatherDetailView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.bottom, 10)
-            ScrollView(.vertical) {
+            VStack{ //TODO: forecast to 12:00
                 ForEach(weatherList, id: \.dt) { weather in
                     NavigationLink(destination: WeatherDetailHourlyView(weatherListForDay: weatherViewModel.getWeatherForDay(day: Date(timeIntervalSince1970: TimeInterval(weather.dt))), apiaryName: apiaryName)) {
                         HStack {
@@ -134,9 +127,10 @@ struct WeatherDetailView: View {
             }
         }
         .padding()
+        .frame(width: 300)
     }
     
-   
+    
 }
 
 struct WeatherDetailHourlyView: View {
@@ -157,7 +151,7 @@ struct WeatherDetailHourlyView: View {
                         .foregroundColor(.red)
                 } else {
                     ForEach(weatherListForDay, id: \.dt) { weather in
-                     // TODO: tu ma być prognoza co 3h dla całego dnia ale cos jest nie tak!!
+                        // TODO: tu ma być prognoza co 3h dla całego dnia ale cos jest nie tak!!
                         HStack {
                             Text(Date(timeIntervalSince1970: TimeInterval(weather.dt)).formatted(.dateTime.hour().minute()))
                                 .font(.title3)
