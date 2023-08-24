@@ -23,7 +23,7 @@ struct CreateHiveView: View {
                 .keyboardType(.numberPad)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 180)
-            Text("")
+            
             Picker("Wybierz Producenta", selection: $selectedProducent) {
                 ForEach(HiveProducent.allCases, id: \.self) { producent in
                     Text(producent.rawValue).tag(producent)
@@ -34,7 +34,7 @@ struct CreateHiveView: View {
                     .font(.title3)
                     .bold()
                 
-                    
+                
                 ForEach(HiveSection.allCases, id: \.self) { section in
                     HStack(spacing: 5) {
                         Text(section.description)
@@ -67,9 +67,9 @@ struct CreateHiveView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(20)
-                  
+                
             }
-
+            
         }
     }
     
@@ -80,8 +80,32 @@ struct CreateHiveView: View {
         }
         
         let hive = Hive(hiveNumber: hiveNumber, hiveProducent: selectedProducent, hiveSections: hiveSectionsArray)
-        // Tutaj możesz dodać logikę zapisu lub inny kod związany z utworzeniem ulu
-        print(hive)
+        
+        // Zapisz ul
+        var existingHives = Hive.loadHives()
+        existingHives.append(hive)
+        Hive.saveHives(existingHives)
+        
+    }
+    
+    func editHive(with hiveNumber: Int) {
+        // Znajdź indeks ulu, który chcesz zaktualizować
+        if let index = Hive.loadHives().firstIndex(where: { $0.hiveNumber == hiveNumber }) {
+            var hiveSectionsArray: [HiveSection] = []
+            for (section, count) in hiveSections {
+                hiveSectionsArray += Array(repeating: section, count: count)
+            }
+            
+            // Stworzenie nowego ulu z nowymi danymi
+            let updatedHive = Hive(hiveNumber: hiveNumber, hiveProducent: selectedProducent, hiveSections: hiveSectionsArray)
+            
+            // Wczytaj wszystkie ule, zastąp ul, który chcesz zaktualizować, i zapisz zmiany
+            var existingHives = Hive.loadHives()
+            existingHives[index] = updatedHive
+            Hive.saveHives(existingHives)
+        } else {
+            print("Ul o numerze \(hiveNumber) nie został znaleziony.")
+        }
     }
 }
 
