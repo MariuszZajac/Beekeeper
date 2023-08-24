@@ -19,6 +19,7 @@
 		87DF9B7E2A94C6D400451ACE /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B7D2A94C6D400451ACE /* UserDefaultsManager.swift */; };
 		87DF9B832A95172A00451ACE /* ApiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B822A95172A00451ACE /* ApiaryDetailView.swift */; };
 		87DF9B852A951E1D00451ACE /* ApiariesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B842A951E1D00451ACE /* ApiariesListView.swift */; };
+		87DF9B8A2A9750FD00451ACE /* CreateHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B892A9750FD00451ACE /* CreateHiveView.swift */; };
 		87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24B2A8BE29B003680A3 /* Hive.swift */; };
 		87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24D2A8BE2B8003680A3 /* Apiary.swift */; };
 		87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2552A8BE69D003680A3 /* Queen.swift */; };
@@ -55,6 +56,7 @@
 		87DF9B7D2A94C6D400451ACE /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		87DF9B822A95172A00451ACE /* ApiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiaryDetailView.swift; sourceTree = "<group>"; };
 		87DF9B842A951E1D00451ACE /* ApiariesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiariesListView.swift; sourceTree = "<group>"; };
+		87DF9B892A9750FD00451ACE /* CreateHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHiveView.swift; sourceTree = "<group>"; };
 		87EDF24B2A8BE29B003680A3 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
 		87EDF24D2A8BE2B8003680A3 /* Apiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiary.swift; sourceTree = "<group>"; };
 		87EDF2552A8BE69D003680A3 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
@@ -147,6 +149,15 @@
 			path = SetApiary;
 			sourceTree = "<group>";
 		};
+		87DF9B882A9750D500451ACE /* Hive */ = {
+			isa = PBXGroup;
+			children = (
+				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
+				87DF9B892A9750FD00451ACE /* CreateHiveView.swift */,
+			);
+			path = Hive;
+			sourceTree = "<group>";
+		};
 		87EDF24A2A8BE279003680A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +169,7 @@
 		87EDF2572A8BF51B003680A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87DF9B882A9750D500451ACE /* Hive */,
 				8723E15D2A8BBCA1004FD589 /* BeekeeperApp.swift */,
 				87F358812A8E7EC300C33452 /* ContentView.swift */,
 				87F358832A8E821A00C33452 /* HomeView */,
@@ -174,7 +186,6 @@
 			children = (
 				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
 				870C09FE2A8F4E89005622F8 /* UserInfo.swift */,
-				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
 				87EDF2552A8BE69D003680A3 /* Queen.swift */,
 				87EDF2582A8C9A03003680A3 /* Colony.swift */,
 				87EDF2602A8CA89C003680A3 /* Inspection.swift */,
@@ -339,6 +350,7 @@
 				87EDF2612A8CA89C003680A3 /* Inspection.swift in Sources */,
 				87DF9B7E2A94C6D400451ACE /* UserDefaultsManager.swift in Sources */,
 				87EDF2652A8CC239003680A3 /* WeatherData.swift in Sources */,
+				87DF9B8A2A9750FD00451ACE /* CreateHiveView.swift in Sources */,
 				8723E15E2A8BBCA1004FD589 /* BeekeeperApp.swift in Sources */,
 				87EDF25F2A8CA79E003680A3 /* ToDoListView.swift in Sources */,
 				87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */,

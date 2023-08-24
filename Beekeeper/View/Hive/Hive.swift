@@ -10,13 +10,15 @@ import Foundation
 struct Hive: Identifiable, Codable {
     
     let id: UUID
-    let hiveNumber: Int
+    let hiveNumber: Int?
+    
     let hiveProducent: HiveProducent
     let hiveSections: [HiveSection]
     var hiveInspections: [Inspection]
     var hiveLastInspection: Date? {
            return hiveInspections.sorted(by: { $0.lastInspection > $1.lastInspection }).first?.lastInspection
        }
+    
     
     init(hiveNumber: Int, hiveProducent: HiveProducent, hiveSections: [HiveSection], hiveLastInspection: Date = Date()) {
         self.id = UUID()
@@ -27,17 +29,31 @@ struct Hive: Identifiable, Codable {
     }
 }
 
-enum HiveProducent: String, Codable {
+enum HiveProducent: String, Codable, CaseIterable {
     case langstroth = "Langstroth"
     case dadant = "Dadant"
     case wielkopolski = "Wielkopolski"
+    case wielkopolski18 = "Wielkopolski 18cm"
     case warszawski = "Warszawski"
-    case wielkopolski18 = "Wielkopolski 18"
     case ostrowskiej = "Ostrowskiej"
+    case inny = "Inny"
 }
 
-enum HiveSection: Codable {
-    case nest
-    case body
-    case honeySuper
+enum HiveSection: String, Codable, CaseIterable{
+    case nest = "Gniazdo"
+    case body = "Korpus"
+    case honeySuper = "Miodnia"
+    case feeder = "Podkarmiaczka"
+    var description: String {
+        switch self {
+        case .nest:
+            return "Gniazdo"
+        case .body:
+            return "Korpus"
+        case .honeySuper:
+            return "Miodnia"
+        case .feeder:
+            return "Podkarmiaczka"
+        }
+    }
 }
