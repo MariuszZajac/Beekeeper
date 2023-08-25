@@ -22,18 +22,13 @@ struct SetApiaryView: View {
             }
             ApiaryTextFields(apiaryName: $viewModel.apiaryName, apiaryOwner: $viewModel.apiaryOwner, address: $viewModel.address)
             
-            Button(action: {
+            Button("Pobierz dane GPS",action: {
                 locationViewModel.getCoordinatesFromAddress(address: viewModel.address) { location in
                     viewModel.selectedLocation = location
                 }
-            }, label: {
-                Text("Pobierz dane GPS")
-                       .padding(.horizontal, 16)
-                       .padding(.vertical, 8)
-                       .background(Color.blue)
-                       .foregroundColor(.white)
-                       .clipShape(RoundedRectangle(cornerRadius: 10))
             })
+            .buttonStyle(FilledRoundedCornerButtonStyle())
+
             // Create Apiary Button
             if locationViewModel.selectedLocation != nil {
                 Button("Stwórz pasiekę") {
@@ -48,11 +43,8 @@ struct SetApiaryView: View {
                         isShowingAlert = true
                     }
                 }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .buttonStyle(FilledRoundedCornerButtonStyle())
+
             }
         }
         .padding()

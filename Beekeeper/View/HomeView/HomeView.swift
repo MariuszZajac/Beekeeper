@@ -19,14 +19,13 @@ struct HomeView: View {
                     TopLevelHomeView()
                 }
                 .frame(maxHeight: 20)
-                ScrollView(.horizontal){
-                    HStack(spacing: 20){
+                
+                    HStack(spacing: 2){
                         
                         ForEach(viewModel.apiary) { apiary in
                             WeatherView(apiary: apiary)
                         }
-                    }
-                    .padding(.horizontal, 2)
+                    
                 }
                 
             }

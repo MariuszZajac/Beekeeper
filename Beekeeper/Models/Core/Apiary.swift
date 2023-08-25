@@ -37,3 +37,35 @@ extension Apiary {
         return defaultsManager.load([Apiary].self, forKey: userDefaultsKey) ?? []
     }
 }
+
+struct ApiaryManager: CRUDOperations {
+    typealias ItemType = Apiary
+    
+    private var apiaries: [Apiary] = Apiary.loadApiaries()
+    
+    mutating func add(_ item: Apiary) {
+        apiaries.append(item)
+    }
+    
+    mutating func remove(itemWithID id: Apiary.ID) -> Apiary? {
+        if let index = apiaries.firstIndex(where: { $0.id == id }) {
+            let removedItem = apiaries.remove(at: index)
+            Apiary.saveApiaries(apiaries) // zapisz zmiany
+            return removedItem
+        }
+        return nil
+    }
+
+    
+    func get(itemWithID id: Apiary.ID) -> Apiary? {
+        return apiaries.first(where: { $0.id == id })
+    }
+    
+    mutating func update(item: Apiary) -> Bool {
+        if let index = apiaries.firstIndex(where: { $0.id == item.id }) {
+            apiaries[index] = item
+            return true
+        }
+        return false
+    }
+}

@@ -59,16 +59,10 @@ struct CreateHiveView: View {
                     }
                 }
             }
-            Button(action: {
-                createHive()
-            }) {
-                Text("Utwórz Ul")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                
-            }
+            Button("Utwórz ul", action: createHive)
+                .buttonStyle(FilledRoundedCornerButtonStyle())
+            
+            
             
         }
     }

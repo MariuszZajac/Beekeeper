@@ -14,7 +14,7 @@ class SetApiaryViewModel: ObservableObject {
     @Published var selectedLocation: ApiaryLocation?
     @Published var address = ""
     @Published var apiary = [Apiary]()
-    
+    private var apiaryManager = ApiaryManager()
     init() {
         loadApiaries()
     }
@@ -40,4 +40,12 @@ class SetApiaryViewModel: ObservableObject {
 
         return newApiary
     }
+    func removeApiaries(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let id = apiary[index].id
+            apiary.remove(at: index)
+        }
+    }
+
+
 }

@@ -20,6 +20,7 @@
 		87DF9B832A95172A00451ACE /* ApiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B822A95172A00451ACE /* ApiaryDetailView.swift */; };
 		87DF9B852A951E1D00451ACE /* ApiariesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B842A951E1D00451ACE /* ApiariesListView.swift */; };
 		87DF9B8A2A9750FD00451ACE /* CreateHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B892A9750FD00451ACE /* CreateHiveView.swift */; };
+		87E5C7B42A9880A10098BC70 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5C7B32A9880A10098BC70 /* CustomButtonStyle.swift */; };
 		87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24B2A8BE29B003680A3 /* Hive.swift */; };
 		87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24D2A8BE2B8003680A3 /* Apiary.swift */; };
 		87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2552A8BE69D003680A3 /* Queen.swift */; };
@@ -57,6 +58,7 @@
 		87DF9B822A95172A00451ACE /* ApiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiaryDetailView.swift; sourceTree = "<group>"; };
 		87DF9B842A951E1D00451ACE /* ApiariesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiariesListView.swift; sourceTree = "<group>"; };
 		87DF9B892A9750FD00451ACE /* CreateHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHiveView.swift; sourceTree = "<group>"; };
+		87E5C7B32A9880A10098BC70 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		87EDF24B2A8BE29B003680A3 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
 		87EDF24D2A8BE2B8003680A3 /* Apiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiary.swift; sourceTree = "<group>"; };
 		87EDF2552A8BE69D003680A3 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				87EDF2692A8CED7A003680A3 /* LocationManager.swift */,
 				8763E5EB2A93942E004BD688 /* CRUDOperations.swift */,
 				87DF9B7D2A94C6D400451ACE /* UserDefaultsManager.swift */,
+				87E5C7B32A9880A10098BC70 /* CustomButtonStyle.swift */,
 			);
 			path = Cores;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				87F358882A8E93DA00C33452 /* UserInfoView.swift in Sources */,
 				870C0A022A8F5D14005622F8 /* LocationViewModel.swift in Sources */,
 				87DF9B832A95172A00451ACE /* ApiaryDetailView.swift in Sources */,
+				87E5C7B42A9880A10098BC70 /* CustomButtonStyle.swift in Sources */,
 				87EDF2702A8DF6BA003680A3 /* WeatherManager.swift in Sources */,
 				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,
 				87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */,
