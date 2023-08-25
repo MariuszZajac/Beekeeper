@@ -21,6 +21,7 @@
 		87DF9B852A951E1D00451ACE /* ApiariesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B842A951E1D00451ACE /* ApiariesListView.swift */; };
 		87DF9B8A2A9750FD00451ACE /* CreateHiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DF9B892A9750FD00451ACE /* CreateHiveView.swift */; };
 		87E5C7B42A9880A10098BC70 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5C7B32A9880A10098BC70 /* CustomButtonStyle.swift */; };
+		87E5C7B62A98AB6E0098BC70 /* CreateHiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5C7B52A98AB6E0098BC70 /* CreateHiveViewModel.swift */; };
 		87EDF24C2A8BE29B003680A3 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24B2A8BE29B003680A3 /* Hive.swift */; };
 		87EDF24E2A8BE2B8003680A3 /* Apiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF24D2A8BE2B8003680A3 /* Apiary.swift */; };
 		87EDF2562A8BE69D003680A3 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EDF2552A8BE69D003680A3 /* Queen.swift */; };
@@ -59,6 +60,7 @@
 		87DF9B842A951E1D00451ACE /* ApiariesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiariesListView.swift; sourceTree = "<group>"; };
 		87DF9B892A9750FD00451ACE /* CreateHiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHiveView.swift; sourceTree = "<group>"; };
 		87E5C7B32A9880A10098BC70 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		87E5C7B52A98AB6E0098BC70 /* CreateHiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHiveViewModel.swift; sourceTree = "<group>"; };
 		87EDF24B2A8BE29B003680A3 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
 		87EDF24D2A8BE2B8003680A3 /* Apiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiary.swift; sourceTree = "<group>"; };
 		87EDF2552A8BE69D003680A3 /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				87EDF24B2A8BE29B003680A3 /* Hive.swift */,
+				87E5C7B52A98AB6E0098BC70 /* CreateHiveViewModel.swift */,
 				87DF9B892A9750FD00451ACE /* CreateHiveView.swift */,
 			);
 			path = Hive;
@@ -370,6 +373,7 @@
 				87EDF25D2A8CA53E003680A3 /* WeatherView.swift in Sources */,
 				87EDF26A2A8CED7A003680A3 /* LocationManager.swift in Sources */,
 				870C09FF2A8F4E89005622F8 /* UserInfo.swift in Sources */,
+				87E5C7B62A98AB6E0098BC70 /* CreateHiveViewModel.swift in Sources */,
 				870C0A062A8F75EB005622F8 /* SetApiaryViewModel.swift in Sources */,
 				87DF9B852A951E1D00451ACE /* ApiariesListView.swift in Sources */,
 				87EDF2592A8C9A03003680A3 /* Colony.swift in Sources */,
