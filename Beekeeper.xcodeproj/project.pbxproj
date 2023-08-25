@@ -189,8 +189,8 @@
 		87EDF2632A8CC1E8003680A3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
 				870C09FE2A8F4E89005622F8 /* UserInfo.swift */,
+				87EDF24D2A8BE2B8003680A3 /* Apiary.swift */,
 				87EDF2552A8BE69D003680A3 /* Queen.swift */,
 				87EDF2582A8C9A03003680A3 /* Colony.swift */,
 				87EDF2602A8CA89C003680A3 /* Inspection.swift */,

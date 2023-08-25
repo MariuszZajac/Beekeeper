@@ -19,7 +19,7 @@ class CreateHiveViewModel: ObservableObject {
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     
-    func getHiveSectionsArray() -> [HiveSection] {
+    func getHiveSections() -> [HiveSection] {
         var hiveSectionsArray: [HiveSection] = []
         for (section, count) in hiveSections {
             hiveSectionsArray += Array(repeating: section, count: count)
@@ -35,7 +35,7 @@ class CreateHiveViewModel: ObservableObject {
     }
     
     func createHive() {
-        let hiveSectionsArray = getHiveSectionsArray()
+        let hiveSectionsArray = getHiveSections()
         
         let hive = Hive(hiveNumber: hiveNumber, hiveProducent: selectedProducent, hiveSections: hiveSectionsArray)
         
@@ -48,7 +48,7 @@ class CreateHiveViewModel: ObservableObject {
     
     func editHive(with hiveNumber: Int) {
         if let index = Hive.loadHives().firstIndex(where: { $0.hiveNumber == hiveNumber }) {
-            let hiveSectionsArray = getHiveSectionsArray()
+            let hiveSectionsArray = getHiveSections()
             let updatedHive = Hive(hiveNumber: hiveNumber, hiveProducent: selectedProducent, hiveSections: hiveSectionsArray)
             
             // Wczytaj wszystkie ule, zastąp ul, który chcesz zaktualizować, i zapisz zmiany

@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 
 class WeatherViewModel: ObservableObject {
-    private let weatherManager = WeatherManager()
+    private var weatherManager = WeatherManager()
     @Published var selectedWeatherList: [WeatherData] = []
     @Published var weather: WeatherResponse?
     
@@ -28,7 +28,8 @@ class WeatherViewModel: ObservableObject {
            }
        }
     
-    init(apiary: Apiary) {
+    init(apiary: Apiary, weatherManager: WeatherManager = WeatherManager()) {
+        self.weatherManager = weatherManager
         self.apiary = apiary
         fetchWeatherData()
     }
@@ -90,9 +91,13 @@ class WeatherViewModel: ObservableObject {
     
 }
 extension Date {
+    static let withoutYearFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        return formatter
+    }()
+    
     func formattedWithoutYear() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d" // np. "Sty 23"
-        return dateFormatter.string(from: self)
+        return Date.withoutYearFormatter.string(from: self)
     }
 }
