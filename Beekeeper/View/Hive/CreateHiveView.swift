@@ -16,6 +16,9 @@ struct CreateHiveView: View {
         .honeySuper: 0,
         .feeder: 0
     ]
+    @State private var showingAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
     
     var body: some View {
         VStack(spacing: 5) {
@@ -42,8 +45,12 @@ struct CreateHiveView: View {
                             .padding(.trailing, 50)
                         
                         Button(action: {
-                            if hiveSections[.nest] != nil && hiveSections[.nest]! > 1 {
-                                hiveSections[.nest]! -= 1
+                            if section == .nest {
+                                if hiveSections[section, default: 0] > 1 {
+                                    hiveSections[section, default: 0] -= 1
+                                }
+                            } else if hiveSections[section, default: 0] > 0 {
+                                hiveSections[section, default: 0] -= 1
                             }
                         }) {
                             Image(systemName: "minus.circle")
@@ -61,51 +68,65 @@ struct CreateHiveView: View {
             }
             Button("Utwórz ul", action: createHive)
                 .buttonStyle(FilledRoundedCornerButtonStyle())
-            
-            
-            
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
         }
+        
     }
     
-    func createHive() {
+    
+    
+    
+    func getHiveSectionsArray() -> [HiveSection] {
         var hiveSectionsArray: [HiveSection] = []
         for (section, count) in hiveSections {
             hiveSectionsArray += Array(repeating: section, count: count)
         }
+        return hiveSectionsArray
+    }
+    func createHive() {
+        let hiveSectionsArray = getHiveSectionsArray()
         
         let hive = Hive(hiveNumber: hiveNumber, hiveProducent: selectedProducent, hiveSections: hiveSectionsArray)
         
         // Zapisz ul
-        var existingHives = Hive.loadHives()
-        existingHives.append(hive)
-        Hive.saveHives(existingHives)
+        let saveResult = Hive.saveHives([hive])
         
+        if saveResult {
+            alertMessage = "Ul został pomyślnie utworzony."
+        } else {
+            alertMessage = "Wystąpił błąd podczas tworzenia ula."
+        }
+        showingAlert = true
     }
     
+    
     func editHive(with hiveNumber: Int) {
-        // Znajdź indeks ulu, który chcesz zaktualizować
         if let index = Hive.loadHives().firstIndex(where: { $0.hiveNumber == hiveNumber }) {
-            var hiveSectionsArray: [HiveSection] = []
-            for (section, count) in hiveSections {
-                hiveSectionsArray += Array(repeating: section, count: count)
-            }
-            
-            // Stworzenie nowego ulu z nowymi danymi
+            let hiveSectionsArray = getHiveSectionsArray()
             let updatedHive = Hive(hiveNumber: hiveNumber, hiveProducent: selectedProducent, hiveSections: hiveSectionsArray)
             
             // Wczytaj wszystkie ule, zastąp ul, który chcesz zaktualizować, i zapisz zmiany
             var existingHives = Hive.loadHives()
             existingHives[index] = updatedHive
-            Hive.saveHives(existingHives)
+            let saveResult = Hive.saveHives(existingHives)
+            
+            if saveResult {
+                alertMessage = "Ul został pomyślnie zaktualizowany."
+            } else {
+                alertMessage = "Wystąpił błąd podczas aktualizacji ula."
+            }
+            showingAlert = true
         } else {
             print("Ul o numerze \(hiveNumber) nie został znaleziony.")
         }
     }
-}
-
-struct CreateHiveView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateHiveView(hiveNumber: 1, selectedProducent: .langstroth)
+    
+    struct CreateHiveView_Previews: PreviewProvider {
+        static var previews: some View {
+            CreateHiveView(hiveNumber: 1, selectedProducent: .langstroth)
+        }
     }
+    
 }
-

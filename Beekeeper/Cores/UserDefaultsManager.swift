@@ -14,14 +14,17 @@ class UserDefaultsManager {
     }
 
     // Zapisuje dowolny obiekt kodowalny do UserDefaults
-    func save<T: Encodable>(_ object: T, forKey key: String) {
+    func save<T: Encodable>(_ object: T, forKey key: String) -> Bool {
         do {
             let encodedData = try JSONEncoder().encode(object)
             userDefaults.set(encodedData, forKey: key)
+            return true
         } catch {
             print("Błąd podczas zapisywania obiektu: \(error.localizedDescription)")
+            return false
         }
     }
+
 
     // Wczytuje obiekt z UserDefaults
     func load<T: Decodable>(_ type: T.Type, forKey key: String) -> T? {
