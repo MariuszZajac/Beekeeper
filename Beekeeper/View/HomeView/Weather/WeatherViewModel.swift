@@ -8,12 +8,12 @@
 import Foundation
 import CoreLocation
 import SwiftUI
+import Combine
 
 class WeatherViewModel: ObservableObject {
     private let weatherManager = WeatherManager()
     @Published var selectedWeatherList: [WeatherData] = []
     @Published var weather: WeatherResponse?
-    @Published var apiary: Apiary?
     
     var apiaryName: String {
         return apiary?.apiaryName ?? ""
@@ -21,15 +21,20 @@ class WeatherViewModel: ObservableObject {
     var apiaryLocation: ApiaryLocation? {
         return apiary?.apiaryLocation
     }
+    private var apiaryObserver: AnyCancellable? = nil
+       @Published var apiary: Apiary? {
+           didSet {
+               fetchWeatherData()
+           }
+       }
     
     init(apiary: Apiary) {
         self.apiary = apiary
-        //  fetchWeatherData(for: apiary.apiaryLocation)
+        fetchWeatherData()
     }
     
-    func fetchWeatherData(for apiaryLocation: ApiaryLocation?) {
-        guard let location = apiaryLocation else { return }
-        
+    func fetchWeatherData() {
+        guard let location = self.apiary?.apiaryLocation else { return }
         weatherManager.getCurrentWeather(latitude: location.latitude, longitude: location.longitude) { result in
             switch result {
             case .success(let weatherResponse):
@@ -42,6 +47,8 @@ class WeatherViewModel: ObservableObject {
             }
         }
     }
+    
+    
     func processWeatherData() {
         let weatherList = weather?.list ?? []
 

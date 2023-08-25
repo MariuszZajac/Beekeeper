@@ -6,10 +6,10 @@
 //
 import SwiftUI
 struct WeatherView: View {
-    @StateObject var viewModel: WeatherViewModel
+    @ObservedObject var viewModel: WeatherViewModel
     
     init(apiary: Apiary) {
-        _viewModel = StateObject(wrappedValue: WeatherViewModel(apiary: apiary))
+        _viewModel = ObservedObject(wrappedValue: WeatherViewModel(apiary: apiary))
     }
     
     var body: some View {
@@ -24,9 +24,9 @@ struct WeatherView: View {
                     Text("Loading weather data...")
                 }
             }            .padding()
-                .onAppear {
-                    viewModel.fetchWeatherData(for: viewModel.apiaryLocation)
-                }
+               // .onAppear {
+//                    viewModel.fetchWeatherData()
+//                }
         }
     }
 }

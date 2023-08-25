@@ -45,6 +45,7 @@ class SetApiaryViewModel: ObservableObject {
             let id = apiary[index].id
             apiary.remove(at: index)
         }
+        Apiary.saveApiaries(apiary)
     }
 
 
