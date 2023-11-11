@@ -28,7 +28,7 @@ Jesteśmy otwarci na sugestie, zgłaszanie błędów i współpracę. Jeśli mas
 
 ## Kontakt
 
-Masz pytania, uwagi lub potrzebujesz pomocy? Skontaktuj się z nami pod adresem support@beekeeperapp.com.
+Masz pytania, uwagi lub potrzebujesz pomocy? Skontaktuj się z nami pod adresem zajac.mariusz@icloud.com
 
 ## Licencja
 
