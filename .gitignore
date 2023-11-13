@@ -1,0 +1,4 @@
+# Ignoruj pliki konfiguracyjne
+*.plist
+.env
+/Users/mariuszzajac/Projekty swift/Beekiper/Beekeeper/Beekeeper/Cores/CRUDOperations.swift
