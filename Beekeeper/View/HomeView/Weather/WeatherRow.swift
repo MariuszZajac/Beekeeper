@@ -22,7 +22,9 @@ struct WeatherRow: View {
                 .cornerRadius(50)
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("\(value)")
+                Text(name)
+                    .font(.caption)
+                Text(value)
                     .bold()
                     .font(.headline)
                     
@@ -35,6 +37,6 @@ struct WeatherRow: View {
 
 struct WeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherRow(logo: "termometer", name: "temp", value: "8°")
+        WeatherRow(logo: "thermometer", name: "temp", value: "8°")
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Colony: Identifiable, Codable {
-    var id: UUID
+    var id: UUID = UUID()
     let health: HealthStatus
     let condition: ColonyCondition
     var structure: ColonyStructure

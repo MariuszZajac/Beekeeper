@@ -62,7 +62,7 @@ extension Hive {
     private static let defaultsManager = UserDefaultsManager()
 
     static func saveHives(_ hives: [Hive]) -> Bool {
-        return UserDefaultsManager().save(hives, forKey: userDefaultsKey)
+        return defaultsManager.save(hives, forKey: userDefaultsKey)
     }
 
     static func loadHives() -> [Hive] {

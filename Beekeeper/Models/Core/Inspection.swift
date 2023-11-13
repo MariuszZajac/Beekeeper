@@ -28,7 +28,7 @@ struct Inspection: Identifiable, Codable {
 }
 
 struct Task: Identifiable, Codable {
-    let id: UUID
+   var id: UUID = UUID()
     let title: String
     let isCompleted: Bool
     let isPriority: Bool // Zadanie do natychmiastowego wykonania
