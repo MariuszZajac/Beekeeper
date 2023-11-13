@@ -16,11 +16,12 @@ Beekeeper App to innowacyjna aplikacja stworzona z myślą o pszczelarzach, umo�
 
 - **Mapa Lokacji Pasieki:** Zaznacz lokalizację każdego ula na mapie, ułatwiając planowanie tras i lokalizację.
 
-## Instalacja
+## Zastosowane technologie
 
-1. **Wymagania:** Upewnij się, że posiadasz zainstalowaną najnowszą wersję iOS.
-2. **Pobierz:** Skorzystaj z App Store, aby pobrać i zainstalować Beekeeper App na swoim urządzeniu.
-3. **Logowanie:** Zaloguj się lub utwórz konto, aby uzyskać pełen dostęp do funkcji aplikacji.
+SwiftUI
+MVVM
+Firebase
+
 
 ## Kontrybucje
 
@@ -39,6 +40,8 @@ Beekeeper App jest dostępna na licencji MIT. Szczegółowe informacje można zn
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
 
 <img src="https://github.com/MariuszZajac/Beekeeper/assets/93003863/bb7f13cc-2439-49b4-b2be-a13861d8c023" width="48%" alt="Screenshot 1">
+
+<img src="https://github.com/MariuszZajac/Beekeeper/assets/93003863/900a3757-e33a-4554-afd0-5da6f1f246a7" width="48%" alt="Screenshot 11">
 
 <img src="https://github.com/MariuszZajac/Beekeeper/assets/93003863/436c0116-65e8-430c-9546-860856b2561a" width="48%" alt="Screenshot 2">
 
